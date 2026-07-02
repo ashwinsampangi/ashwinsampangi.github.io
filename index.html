@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashwin Kumar — Finance, run on AI</title>
+<meta name="description" content="Most finance leaders experiment with AI. I rebuilt how a finance function runs on it — with the verification, review, and governance a CFO would demand.">
+<meta property="og:title" content="Ashwin Kumar — Finance, run on AI">
+<meta property="og:description" content="The five levels of using AI, and what it takes to trust AI output enough to put it in front of a board.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#0f1722; --muted:#5b6677; --line:#e6eaf0;
+    --blue:#1f4e79; --blue2:#2e6db4; --bg:#ffffff; --soft:#f4f7fb; --dark:#0f1f33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  a{color:var(--blue2);text-decoration:none}
+  /* nav */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .name{font-weight:800;letter-spacing:-.01em}
+  nav .links a{margin-left:22px;font-size:14px;color:var(--muted);font-weight:600}
+  nav .links a:hover{color:var(--blue)}
+  /* hero */
+  .hero{padding:74px 0 60px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue2);font-weight:700}
+  h1{font-size:46px;line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-top:14px}
+  h1 .a{color:var(--blue)}
+  .lede{font-size:19px;color:var(--muted);margin-top:20px;max-width:680px;line-height:1.55}
+  .cta-row{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px}
+  .btn.p{background:var(--blue);color:#fff}
+  .btn.p:hover{background:#173c5e}
+  .btn.s{background:var(--soft);color:var(--blue);border:1px solid var(--line)}
+  /* sections */
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2);font-weight:700}
+  h2{font-size:30px;letter-spacing:-.01em;font-weight:800;margin-top:10px}
+  .p{font-size:17px;color:#33404f;margin-top:16px;max-width:700px}
+  /* ladder */
+  .ladder{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+  .rung{display:grid;grid-template-columns:64px 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .rung .n{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff}
+  .rung .c{padding:15px 20px}
+  .rung .c .t{font-weight:700;font-size:16px}
+  .rung .c .d{color:var(--muted);font-size:14.5px;margin-top:3px}
+  .n1{background:#c2cad4;color:#566270}
+  .n2{background:#9fb1c7}.n3{background:#7494bd}.n4{background:#487098}
+  .r5{border-color:var(--blue);box-shadow:0 4px 20px rgba(31,78,121,.12)}
+  .r5 .n{background:var(--blue)}.r5 .c{background:#f3f8fd}.r5 .c .t{color:var(--blue)}
+  .badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--blue2);border-radius:999px;padding:2px 9px;margin-left:8px}
+  /* proof */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--soft)}
+  .card .big{font-size:30px;font-weight:800;color:var(--blue);letter-spacing:-.01em}
+  .card .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-top:4px}
+  .card .dd{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.5}
+  /* loop */
+  .loop{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .step{border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;background:#fff;position:relative}
+  .step .s{font-size:11px;font-weight:700;color:var(--blue2);letter-spacing:.1em;text-transform:uppercase}
+  .step .h{font-weight:700;font-size:15px;margin-top:6px}
+  .step .y{font-size:12.5px;color:var(--muted);margin-top:5px}
+  .step.you{background:#f3f8fd;border-color:#cfe0f1}
+  .mine{font-size:13.5px;color:var(--muted);margin-top:16px}
+  .mine b{color:var(--ink)}
+  /* dark cta */
+  .end{background:var(--dark);color:#e8eef6;border:0}
+  .end h2{color:#fff}
+  .end .p{color:#b6c3d4}
+  .end .quote{font-size:24px;font-weight:700;color:#fff;margin-top:8px;line-height:1.4}
+  .end .who{margin-top:24px;font-size:14px;color:#8ea1ba}
+  .end a.btn.p{background:#3b82c4}
+  footer{padding:30px 0;color:var(--muted);font-size:13px}
+  .note{font-size:12px;color:#9aa5b2;margin-top:10px}
+  @media(max-width:680px){
+    h1{font-size:32px}.grid3{grid-template-columns:1fr}.loop{grid-template-columns:1fr 1fr}
+    nav .links{display:none}
+  }
+</style>
+</head>
+<body>
+  <nav><div class="wrap">
+    <div class="name">Ashwin Kumar</div>
+    <div class="links">
+      <a href="#ladder">The 5 levels</a>
+      <a href="#proof">Proof</a>
+      <a href="#loop">How it works</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap">
+    <div class="eyebrow">Finance, run on AI</div>
+    <h1>Most finance leaders <span class="a">experiment</span> with AI.<br>I rebuilt how a finance function runs on it.</h1>
+    <p class="lede">With the verification, review, and governance a CFO would demand. The differentiator isn't that I use AI — it's that I made its output trustworthy enough to put in front of a board.</p>
+    <div class="cta-row">
+      <a class="btn p" href="#ladder">See the framework</a>
+      <a class="btn s" href="#contact">Get in touch</a>
+    </div>
+  </div></header>
+
+  <section id="ladder"><div class="wrap">
+    <div class="kicker">The framework</div>
+    <h2>There are five levels of using AI</h2>
+    <p class="p">Most people never leave the first one — and most strong operators stop at the third. The jump that compounds is from automating tasks to encoding judgment.</p>
+    <div class="ladder">
+      <div class="rung"><div class="n n1">1</div><div class="c"><div class="t">Ask</div><div class="d">Questions to a chatbot when you're stuck. Useful, occasional, nothing compounds.</div></div></div>
+      <div class="rung"><div class="n n2">2</div><div class="c"><div class="t">Draft</div><div class="d">AI writes the first version, you clean it up. The ceiling is still you, from scratch.</div></div></div>
+      <div class="rung"><div class="n n3">3</div><div class="c"><div class="t">Template</div><div class="d">A library of saved prompts for repeat tasks. Where most strong operators stop.</div></div></div>
+      <div class="rung"><div class="n n4">4</div><div class="c"><div class="t">Automate</div><div class="d">Custom tools that do real work end to end, without you in the loop each time.</div></div></div>
+      <div class="rung r5"><div class="n">5</div><div class="c"><div class="t">Compound<span class="badge">The rare one</span></div><div class="d">Judgment encoded as rules; every correction captured so it never recurs; system and operator sharpen together each cycle. The AI executes — the judgment and accountability stay with me.</div></div></div>
+    </div>
+  </div></section>
+
+  <section id="proof"><div class="wrap">
+    <div class="kicker">The proof</div>
+    <h2>Built, governed, and measured</h2>
+    <p class="p">The hard part of AI in finance isn't generating output. It's trusting it. So I built the controls first.</p>
+    <div class="grid3">
+      <div class="card"><div class="big">45+</div><div class="lab">Custom workflows</div><div class="dd">Board prep, scenario analysis, variance commentary, investor Q&amp;A, and capital allocation — on a structured business-memory layer.</div></div>
+      <div class="card"><div class="big">4 gates</div><div class="lab">Verification protocol</div><div class="dd">Source attribution, recency, internal consistency, and citation — plus adversarial review and self-grading before anything ships.</div></div>
+      <div class="card"><div class="big">3x / 2x</div><div class="lab">Output, personal / team</div><div class="dd">Multi-week analyses now take days; dashboards that took months take days; full adoption across a 12-person team.</div></div>
+    </div>
+  </div></section>
+
+  <section id="loop"><div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>The engine isn't the model. It's the loop.</h2>
+    <p class="p">Three of the four steps are mine. The AI executes; the judgment and the accountability don't move.</p>
+    <div class="loop">
+      <div class="step you"><div class="s">Mine</div><div class="h">Define</div><div class="y">I set the ask and the standard.</div></div>
+      <div class="step"><div class="s">System</div><div class="h">Draft</div><div class="y">It produces at speed.</div></div>
+      <div class="step you"><div class="s">Mine</div><div class="h">Refine</div><div class="y">I correct with judgment.</div></div>
+      <div class="step you"><div class="s">Mine</div><div class="h">Encode</div><div class="y">The correction becomes a standing rule.</div></div>
+    </div>
+    <p class="mine"><b>Why it compounds:</b> every correction is written back as a rule the system applies from then on. Quality rises and turnaround falls — and it keeps doing both, every cycle.</p>
+  </div></section>
+
+  <section id="contact" class="end"><div class="wrap">
+    <div class="kicker" style="color:#7fb0e0">The question I work on</div>
+    <p class="quote">"Would you let AI touch a number that goes to your board? I spent two years making the answer yes."</p>
+    <p class="p">If you lead finance or operations and you're moving AI from pilot to real cadence, that's the conversation I'm up for.</p>
+    <div class="cta-row" style="margin-top:26px">
+      <a class="btn p" href="https://www.linkedin.com/in/ashwinsampangi">Connect on LinkedIn</a>
+      <a class="btn s" style="background:#16293f;color:#cfe0f1;border-color:#2b425c" href="mailto:ashwin.s.reddy@gmail.com">Email me</a>
+    </div>
+    <div class="who">Ashwin Kumar · VP Finance, venture-backed AI company · Own the judgment, delegate the busywork.</div>
+  </div></section>
+
+  <footer><div class="wrap">
+    © 2026 Ashwin Kumar.
+    <div class="note">Views are personal. No employer data beyond independently cleared productivity figures.</div>
+  </div></footer>
+</body>
+</html>
