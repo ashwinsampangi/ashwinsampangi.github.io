@@ -8,14 +8,23 @@
 <meta property="og:description" content="The five levels of using AI, and what it takes to trust AI output enough to put it in front of a board.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ashwinsampangi.github.io/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://ashwinsampangi.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ashwin Kumar — Finance, run on AI">
 <meta name="twitter:description" content="The five levels of using AI, and what it takes to trust AI output enough to put it in front of a board.">
+<meta name="twitter:image" content="https://ashwinsampangi.github.io/og-image.png">
 <link rel="canonical" href="https://ashwinsampangi.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]}
 </script>
+
+<!-- Google Search Console: after adding the property at search.google.com/search-console, paste the token below and uncomment, then submit sitemap.xml. -->
+<!-- <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
+<!-- Analytics (GoatCounter, free + privacy-friendly): create a site at goatcounter.com, replace MYCODE, then uncomment. -->
+<!-- <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
 
 <script src="site.js"></script>
 </head>
@@ -25,122 +34,232 @@
   <title>Ashwin Kumar — Finance, run on AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
   <style>/* cyrillic-ext */
+
 /* cyrillic */
+
 /* vietnamese */
+
 /* latin-ext */
+
 /* latin */
+
 /* cyrillic-ext */
+
 /* cyrillic */
+
 /* vietnamese */
+
 /* latin-ext */
+
 /* latin */
+
 /* cyrillic-ext */
+
 /* cyrillic */
+
 /* vietnamese */
+
 /* latin-ext */
+
 /* latin */
+
 /* latin-ext */
+
 /* latin */
+
 /* latin-ext */
+
 /* latin */
+
 /* vietnamese */
+
 /* latin-ext */
+
 /* latin */
+
 /* vietnamese */
+
 /* latin-ext */
+
 /* latin */
+
 </style>
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); }
     :root {
       --bg: #FAF8F4; --ink: #171A1E; --muted: #5C6470; --faint: #8B93A0;
       --line: #E6E1D7; --accent: #2C5378; --accent-ink: #2C5378;
       --tint: #F1EDE4; --card: #FFFFFF;
+      --line-soft: #EEEAE0; --accent-wash: rgba(44,83,120,0.055);
+      --shadow: 0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
+      --shadow-hover: 0 2px 4px rgba(23,26,30,0.05), 0 18px 44px rgba(23,26,30,0.10);
+      --measure: 62ch;
     }
     :root[data-theme="dark"] {
       --bg: #101318; --ink: #EAE7E0; --muted: #9BA3AF; --faint: #6B7480;
       --line: #262B33; --accent: #2C5378; --accent-ink: #8FB4D6;
       --tint: #171C23; --card: #151920;
+      --line-soft: #1E232B; --accent-wash: rgba(143,180,214,0.07);
+      --shadow: 0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
+      --shadow-hover: 0 2px 5px rgba(0,0,0,0.35), 0 22px 52px rgba(0,0,0,0.55);
     }
     body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
     ::selection { background: var(--accent); color: #fff; }
     @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+    .nav-link { position: relative; color: var(--muted); text-decoration: none; padding: 4px 0; }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; right: 100%; bottom: -1px; height: 1.5px;
+      background: var(--accent-ink); transition: right .28s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { right: 0; }
+
+    .theme-btn { transition: color .25s ease, border-color .25s ease, background-color .35s ease, transform .25s ease; }
+    .theme-btn:hover { color: var(--ink); border-color: var(--faint); transform: rotate(-18deg); }
+
+    .btn { transition: transform .2s cubic-bezier(0.22,1,0.36,1), box-shadow .25s ease, opacity .2s ease, border-color .25s ease, background-color .35s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .btn-ghost:hover { border-color: var(--faint); transform: translateY(-2px); }
+    .btn-arrow { display: inline-block; transition: transform .25s cubic-bezier(0.22,1,0.36,1); }
+    .btn-primary:hover .btn-arrow { transform: translateY(3px); }
+
+    .rung {
+      display: grid; grid-template-columns: clamp(58px, 9vw, 104px) 1fr;
+      gap: clamp(16px, 3vw, 36px); padding: 24px clamp(10px, 2vw, 22px) 24px 0;
+      border-top: 1px solid var(--line); align-items: baseline;
+      position: relative; border-radius: 10px;
+      transition: background-color .3s ease, padding-left .3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .rung::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: var(--accent-ink); transform: scaleY(0); transform-origin: top;
+      transition: transform .35s cubic-bezier(0.22,1,0.36,1); border-radius: 2px;
+    }
+    .rung:hover { background: var(--accent-wash); padding-left: clamp(10px, 1.6vw, 18px); }
+    .rung:hover::before { transform: scaleY(1); }
+    .rung-standout {
+      border-radius: 12px; border-top-color: transparent;
+      background: linear-gradient(180deg, var(--accent-wash), transparent 78%);
+      padding: 30px clamp(16px, 2.4vw, 28px) 32px clamp(16px, 2.4vw, 28px);
+      margin-top: 6px; box-shadow: var(--shadow);
+      outline: 1px solid var(--line-soft);
+    }
+    .rung-standout::before { transform: scaleY(1); width: 3px; }
+    .rung-standout:hover { padding-left: clamp(16px, 2.4vw, 28px); box-shadow: var(--shadow-hover); }
+
+    .stat-card { background: var(--card); padding: 36px 30px 40px; transition: background-color .35s ease; position: relative; }
+    .stat-card::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: var(--accent-ink); opacity: 0; transition: opacity .3s ease;
+    }
+    .stat-card:hover::after { opacity: 0.9; }
+
+    .step-card {
+      padding: 24px 22px 26px; position: relative; border-radius: 12px;
+      transition: transform .25s cubic-bezier(0.22,1,0.36,1), box-shadow .28s ease, border-color .25s ease, background-color .35s ease;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    /* ---- worked-example panel ---- */
+    .case-panel {
+      border: 1px solid var(--line); border-radius: 16px; background: var(--card);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .case-head {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      padding: 28px clamp(20px, 3vw, 36px) 26px; background: var(--tint);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-row {
+      display: grid; grid-template-columns: clamp(104px, 15vw, 156px) 1fr;
+      gap: clamp(16px, 3vw, 36px); padding: 24px clamp(20px, 3vw, 36px);
+      border-top: 1px solid var(--line-soft); align-items: start;
+      transition: background-color .3s ease;
+    }
+    .case-row:first-child { border-top: none; }
+    .case-row:hover { background: var(--accent-wash); }
+    .case-foot {
+      padding: 26px clamp(20px, 3vw, 36px) 30px; border-top: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--accent-wash), transparent 90%);
+    }
+    @media (max-width: 640px) {
+      .case-row { grid-template-columns: 1fr; gap: 8px; padding-top: 20px; padding-bottom: 20px; }
+    }
+
+    .contact-btn { transition: transform .2s cubic-bezier(0.22,1,0.36,1), opacity .2s ease, border-color .25s ease; }
+    .contact-btn:hover { transform: translateY(-2px); }
+    .contact-btn-solid:hover { opacity: 0.9; }
+    .contact-btn-ghost:hover { border-color: #6B7480; }
+
+    @media (max-width: 640px) {
+      .rung { grid-template-columns: auto 1fr; gap: 16px; padding-top: 22px; padding-bottom: 22px; }
+      .nav-links-wrap { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .step-card, .rung, .theme-btn { transition: none !important; }
+    }
   </style>
 </helmet>
 
 <div style="font-family: 'Instrument Sans', sans-serif; color: var(--ink); background: var(--bg); min-height: 100vh; -webkit-font-smoothing: antialiased; line-height: 1.6;">
 
   <!-- NAV -->
-  <nav style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);" data-screen-label="Nav">
-    <div style="max-width: 1060px; margin: 0 auto; padding: 0 28px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
-      <a href="#top" style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; white-space: nowrap; flex-shrink: 0;">Ashwin Kumar</a>
+  <nav style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid var(--line);" data-screen-label="Nav">
+    <div style="max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); height: 66px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="#top" style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); text-decoration: none; white-space: nowrap; flex-shrink: 0;">Ashwin Kumar</a>
       <div style="display: flex; align-items: center; gap: 26px;">
-        <div style="display: flex; gap: 24px; font-size: 13.5px; font-weight: 500;">
-          <a href="#ladder" style="color: var(--muted); text-decoration: none;" style-hover="color: var(--ink)">The 5 levels</a>
-          <a href="#proof" style="color: var(--muted); text-decoration: none;" style-hover="color: var(--ink)">Proof</a>
-          <a href="#loop" style="color: var(--muted); text-decoration: none;" style-hover="color: var(--ink)">How it works</a>
-          <a href="#contact" style="color: var(--muted); text-decoration: none;" style-hover="color: var(--ink)">Contact</a>
+        <div class="nav-links-wrap" style="display: flex; gap: 26px; font-size: 13.5px; font-weight: 500;">
+          <a href="#ladder" class="nav-link">The 5 levels</a>
+          <a href="#loop" class="nav-link">How it works</a>
+          <a href="#case" class="nav-link">In practice</a>
+          <a href="#proof" class="nav-link">Proof</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <button onclick="{{ toggleTheme }}" aria-label="Toggle dark mode" style="width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; padding: 0;" style-hover="color: var(--ink); border-color: var(--faint)">{{ themeIcon }}</button>
+        <button onclick="{{ toggleTheme }}" aria-label="Toggle dark mode" class="theme-btn" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; padding: 0; flex-shrink: 0;">{{ themeIcon }}</button>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header id="top" style="border-bottom: 1px solid var(--line);" data-screen-label="Hero">
-    <div style="max-width: 1060px; margin: 0 auto; padding: clamp(80px, 12vh, 130px) 28px clamp(64px, 10vh, 110px);">
-      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">Finance, run on AI</div>
-      <h1 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(38px, 5.6vw, 64px); line-height: 1.12; letter-spacing: -0.015em; margin: 26px 0 0; max-width: 17ch; text-wrap: pretty;">Most finance leaders <em style="font-style: italic; color: var(--accent-ink);">experiment</em> with AI. I rebuilt how a finance function runs on it.</h1>
-      <p data-reveal="" style="font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); margin: 28px 0 0; max-width: 58ch; line-height: 1.65; text-wrap: pretty;">With the verification, review, and governance a CFO would demand. The differentiator isn't that I use AI — it's that I made its output trustworthy enough to put in front of a board.</p>
-      <div data-reveal="" style="margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
-        <a href="#ladder" style="display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none;" style-hover="opacity: 0.85">See the framework <span style="font-family: 'Newsreader', serif;">↓</span></a>
-        <a href="#contact" style="display: inline-flex; align-items: center; padding: 13px 26px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none;" style-hover="border-color: var(--faint)">Get in touch</a>
+  <header id="top" style="border-bottom: 1px solid var(--line); position: relative; overflow: hidden;" data-screen-label="Hero">
+    <div style="position: absolute; inset: 0; background: radial-gradient(1100px 520px at 12% -8%, var(--accent-wash), transparent 60%); pointer-events: none;"></div>
+    <div style="position: relative; max-width: 1080px; margin: 0 auto; padding: clamp(84px, 13vh, 138px) clamp(20px, 4vw, 32px) clamp(66px, 11vh, 116px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500; display: inline-flex; align-items: center; gap: 12px;"><span style="width: 26px; height: 1px; background: var(--accent-ink); display: inline-block; opacity: 0.6;"></span>Finance, run on AI</div>
+      <h1 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(39px, 5.7vw, 66px); line-height: 1.1; letter-spacing: -0.02em; margin: 28px 0 0; max-width: 17ch; text-wrap: balance;">Most finance leaders <em style="font-style: italic; color: var(--accent-ink);">experiment</em> with AI. I rebuilt how a finance function runs on it.</h1>
+      <p data-reveal="" style="font-size: clamp(17px, 1.8vw, 19px); color: var(--muted); margin: 30px 0 0; max-width: 56ch; line-height: 1.68; text-wrap: pretty;">With the verification, review, and governance a CFO would demand. The differentiator isn't that I use AI — it's that I made its output trustworthy enough to put in front of a board.</p>
+      <div data-reveal="" style="margin-top: 42px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+        <a href="#ladder" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: var(--shadow);">See the framework <span class="btn-arrow" style="font-family: 'Newsreader', serif;">↓</span></a>
+        <a href="#contact" class="btn btn-ghost" style="display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none;">Get in touch</a>
       </div>
     </div>
   </header>
 
   <!-- LADDER -->
-  <section id="ladder" style="border-bottom: 1px solid var(--line); scroll-margin-top: 72px;" data-screen-label="The 5 levels">
-    <div style="max-width: 1060px; margin: 0 auto; padding: clamp(64px, 9vh, 100px) 28px;">
-      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">01 — The framework</div>
-      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.01em; margin: 18px 0 0; line-height: 1.15;">There are five levels of using AI</h2>
-      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 18px 0 0; max-width: 60ch; line-height: 1.65; text-wrap: pretty;">Most people never leave the first one — and most strong operators stop at the third. The jump that compounds is from automating tasks to encoding judgment.</p>
+  <section id="ladder" style="border-bottom: 1px solid var(--line); scroll-margin-top: 74px;" data-screen-label="The 5 levels">
+    <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px, 10vh, 108px) clamp(20px, 4vw, 32px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">01 — The framework</div>
+      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.015em; margin: 20px 0 0; line-height: 1.14;">There are five levels of using AI</h2>
+      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 20px 0 0; max-width: 60ch; line-height: 1.68; text-wrap: pretty;">Most people never leave the first one — and most strong operators stop at the third. The jump that compounds is from automating tasks to encoding judgment.</p>
 
-      <div style="margin-top: 48px; display: flex; flex-direction: column;">
+      <div style="margin-top: 52px; display: flex; flex-direction: column;">
         <sc-for list="{{ rungs }}" as="rung" hint-placeholder-count="5">
-          <div data-reveal="" style="display: grid; grid-template-columns: clamp(64px, 10vw, 110px) 1fr; gap: clamp(16px, 3vw, 36px); padding: 26px 0; border-top: 1px solid var(--line); align-items: baseline;">
-            <div style="font-family: 'Newsreader', serif; font-size: clamp(40px, 5vw, 58px); font-weight: 300; line-height: 1; color: {{ rung.numColor }};">{{ rung.n }}</div>
+          <div data-reveal="" class="rung {{ rung.rowClass }}">
+            <div style="font-family: 'Newsreader', serif; font-size: clamp(42px, 5.2vw, 60px); font-weight: 300; line-height: 0.9; color: {{ rung.numColor }}; font-feature-settings: 'lnum'; text-align: right;">{{ rung.n }}</div>
             <div>
               <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span style="font-family: 'Newsreader', serif; font-size: clamp(21px, 2.4vw, 26px); font-weight: 500; color: {{ rung.titleColor }};">{{ rung.title }}</span>
+                <span style="font-family: 'Newsreader', serif; font-size: clamp(21px, 2.4vw, 26px); font-weight: 500; letter-spacing: -0.01em; color: {{ rung.titleColor }};">{{ rung.title }}</span>
                 <sc-if value="{{ rung.badge }}" hint-placeholder-val="{{ false }}">
                   <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg); background: var(--accent-ink); border-radius: 999px; padding: 4px 12px;">{{ rung.badge }}</span>
                 </sc-if>
               </div>
-              <p style="font-size: 15.5px; color: var(--muted); margin: 8px 0 0; max-width: 62ch; line-height: 1.6; text-wrap: pretty;">{{ rung.desc }}</p>
+              <p style="font-size: 15.5px; color: var(--muted); margin: 10px 0 0; max-width: 60ch; line-height: 1.62; text-wrap: pretty;">{{ rung.desc }}</p>
             </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROOF -->
-  <section id="proof" style="border-bottom: 1px solid var(--line); background: var(--tint); scroll-margin-top: 72px;" data-screen-label="Proof">
-    <div style="max-width: 1060px; margin: 0 auto; padding: clamp(64px, 9vh, 100px) 28px;">
-      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">02 — The proof</div>
-      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.01em; margin: 18px 0 0; line-height: 1.15;">Built, governed, and measured</h2>
-      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 18px 0 0; max-width: 60ch; line-height: 1.65; text-wrap: pretty;">The hard part of AI in finance isn't generating output. It's trusting it. So I built the controls first.</p>
-
-      <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line);">
-        <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="3">
-          <div data-reveal="" style="background: var(--card); padding: 34px 30px 38px;">
-            <div style="font-family: 'Newsreader', serif; font-size: clamp(40px, 4.4vw, 54px); font-weight: 400; letter-spacing: -0.02em; line-height: 1; color: var(--ink);">{{ stat.big }}</div>
-            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; margin-top: 14px;">{{ stat.label }}</div>
-            <p style="font-size: 14.5px; color: var(--muted); margin: 14px 0 0; line-height: 1.6; text-wrap: pretty;">{{ stat.desc }}</p>
           </div>
         </sc-for>
       </div>
@@ -148,46 +267,123 @@
   </section>
 
   <!-- LOOP -->
-  <section id="loop" style="border-bottom: 1px solid var(--line); scroll-margin-top: 72px;" data-screen-label="How it works">
-    <div style="max-width: 1060px; margin: 0 auto; padding: clamp(64px, 9vh, 100px) 28px;">
-      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">03 — How it works</div>
-      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.01em; margin: 18px 0 0; line-height: 1.15;">The engine isn't the model. It's the loop.</h2>
-      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 18px 0 0; max-width: 60ch; line-height: 1.65; text-wrap: pretty;">Three of the four steps are mine. The AI executes; the judgment and the accountability don't move.</p>
+  <section id="loop" style="border-bottom: 1px solid var(--line); scroll-margin-top: 74px;" data-screen-label="How it works">
+    <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px, 10vh, 108px) clamp(20px, 4vw, 32px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">02 — How it works</div>
+      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.015em; margin: 20px 0 0; line-height: 1.14;">The engine isn't the model. It's the loop.</h2>
+      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 20px 0 0; max-width: 60ch; line-height: 1.68; text-wrap: pretty;">Three of the four steps are mine. The AI executes; the judgment and the accountability don't move.</p>
 
-      <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
         <sc-for list="{{ steps }}" as="step" hint-placeholder-count="4">
-          <div data-reveal="" style="border: 1px solid {{ step.borderColor }}; background: {{ step.bg }}; padding: 24px 22px 26px; position: relative;">
+          <div data-reveal="" class="step-card" style="border: 1px solid {{ step.borderColor }}; background: {{ step.bg }};">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{ step.tagColor }};">{{ step.tag }}</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{ step.tagColor }}; display: inline-flex; align-items: center; gap: 7px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{ step.tagColor }}; display: inline-block;"></span>{{ step.tag }}</span>
               <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--faint);">{{ step.idx }}</span>
             </div>
-            <div style="font-family: 'Newsreader', serif; font-size: 25px; font-weight: 500; margin-top: 14px; color: var(--ink);">{{ step.title }}</div>
+            <div style="font-family: 'Newsreader', serif; font-size: 25px; font-weight: 500; letter-spacing: -0.01em; margin-top: 16px; color: var(--ink);">{{ step.title }}</div>
             <p style="font-size: 14px; color: var(--muted); margin: 8px 0 0; line-height: 1.55;">{{ step.desc }}</p>
           </div>
         </sc-for>
       </div>
 
-      <p data-reveal="" style="font-size: 15px; color: var(--muted); margin: 32px 0 0; max-width: 68ch; line-height: 1.65; border-left: 2px solid var(--accent-ink); padding-left: 18px; text-wrap: pretty;"><strong style="color: var(--ink); font-weight: 600;">Why it compounds:</strong> every correction is written back as a rule the system applies from then on. Quality rises and turnaround falls — and it keeps doing both, every cycle.</p>
+      <p data-reveal="" style="font-size: 15px; color: var(--muted); margin: 36px 0 0; max-width: 68ch; line-height: 1.68; border-left: 2px solid var(--accent-ink); padding-left: 20px; text-wrap: pretty;"><strong style="color: var(--ink); font-weight: 600;">Why it compounds:</strong> corrections work like case law. Every fix becomes a written rule, dated and reversible, and the system applies it from then on. Anything I've had to say three times becomes permanent. The same mistake doesn't come back, and each cycle starts ahead of the last.</p>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section id="case" style="border-bottom: 1px solid var(--line); scroll-margin-top: 74px;" data-screen-label="In practice">
+    <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px, 10vh, 108px) clamp(20px, 4vw, 32px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">03 — In practice</div>
+      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.015em; margin: 20px 0 0; line-height: 1.14;">One recurring task, run through the loop</h2>
+      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 20px 0 0; max-width: 60ch; line-height: 1.68; text-wrap: pretty;">A representative example — sanitized, no company figures. This is what the four steps look like on a task that repeats every month.</p>
+
+      <div data-reveal="" class="case-panel" style="margin-top: 48px;">
+        <div class="case-head">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600;">The task</div>
+            <div style="font-family: 'Newsreader', serif; font-size: clamp(23px, 2.6vw, 30px); font-weight: 500; letter-spacing: -0.01em; margin-top: 8px; color: var(--ink);">Monthly board variance commentary</div>
+          </div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--faint); text-align: right; line-height: 1.7;">Recurring · monthly close<br>Actuals vs. plan, line by line</div>
+        </div>
+
+        <div class="case-row">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); display: inline-flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-ink); display: inline-block;"></span>Define · mine</div>
+          <div>
+            <div style="font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink);">Set the bar before anything is written</div>
+            <p style="font-size: 15px; color: var(--muted); margin: 8px 0 0; line-height: 1.6; max-width: 62ch; text-wrap: pretty;">Every variance over threshold gets a driver, an owner, and a next action — and volume effects are separated from rate effects. Nothing ships that a board member could misread as cause when it's only correlation.</p>
+          </div>
+        </div>
+
+        <div class="case-row">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); display: inline-flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--faint); display: inline-block;"></span>Draft · system</div>
+          <div>
+            <div style="font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink);">Pull, write, and cite at speed</div>
+            <p style="font-size: 15px; color: var(--muted); margin: 8px 0 0; line-height: 1.6; max-width: 62ch; text-wrap: pretty;">It reconciles actuals against plan, writes commentary for each line, and tags every figure with its source and as-of date. Anything it can't source, it flags rather than guesses.</p>
+          </div>
+        </div>
+
+        <div class="case-row">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); display: inline-flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-ink); display: inline-block;"></span>Refine · mine</div>
+          <div>
+            <div style="font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink);">Correct with judgment, not a red pen</div>
+            <p style="font-size: 15px; color: var(--muted); margin: 8px 0 0; line-height: 1.6; max-width: 62ch; text-wrap: pretty;">Two corrections this cycle: it had named a correlation as the driver on one line, and double-counted two effects on another. I fix the reasoning, not just the wording.</p>
+          </div>
+        </div>
+
+        <div class="case-row">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); display: inline-flex; align-items: center; gap: 8px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-ink); display: inline-block;"></span>Encode · mine</div>
+          <div>
+            <div style="font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink);">Make the fix permanent</div>
+            <p style="font-size: 15px; color: var(--muted); margin: 8px 0 0; line-height: 1.6; max-width: 62ch; text-wrap: pretty;">Both corrections become standing rules — always split volume vs. rate; never attribute a driver without a supporting cut. Dated, reversible, and applied automatically next month.</p>
+          </div>
+        </div>
+
+        <div class="case-foot">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600;">The outcome</div>
+          <p style="font-size: 16px; color: var(--ink); margin: 12px 0 0; line-height: 1.6; max-width: 66ch; text-wrap: pretty;">What used to take two analysts most of a week is now a same-day first draft — and it arrives already carrying its sources, so review is spent checking judgment, not chasing numbers. Next month, this cycle's two corrections are already baked in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="proof" style="border-bottom: 1px solid var(--line); background: var(--tint); scroll-margin-top: 74px;" data-screen-label="Proof">
+    <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px, 10vh, 108px) clamp(20px, 4vw, 32px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-ink); font-weight: 500;">04 — The proof</div>
+      <h2 data-reveal="" style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.015em; margin: 20px 0 0; line-height: 1.14;">Built, governed, and measured</h2>
+      <p data-reveal="" style="font-size: 17px; color: var(--muted); margin: 20px 0 0; max-width: 60ch; line-height: 1.68; text-wrap: pretty;">One task is an anecdote. The point is that the same discipline runs across the function — at scale, with the controls in place.</p>
+
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);">
+        <sc-for list="{{ stats }}" as="stat" hint-placeholder-count="3">
+          <div data-reveal="" class="stat-card">
+            <div style="font-family: 'Newsreader', serif; font-size: clamp(42px, 4.6vw, 56px); font-weight: 400; letter-spacing: -0.025em; line-height: 1; color: var(--ink);">{{ stat.big }}</div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; margin-top: 16px;">{{ stat.label }}</div>
+            <p style="font-size: 14.5px; color: var(--muted); margin: 14px 0 0; line-height: 1.62; text-wrap: pretty;">{{ stat.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p data-reveal="" style="font-size: 15.5px; color: var(--muted); margin: 38px 0 0; max-width: 66ch; line-height: 1.68; border-left: 2px solid var(--accent-ink); padding-left: 20px; text-wrap: pretty;">Every number it produces carries its source and its as-of date, or it doesn't ship — never a guess a board could act on. Anything headed for a board self-grades against a seven-point bar and gets rewritten until it clears. That's the part most AI skips, and the only part a CFO actually cares about.</p>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" style="background: #101318; scroll-margin-top: 72px;" data-screen-label="Contact">
-    <div style="max-width: 1060px; margin: 0 auto; padding: clamp(90px, 16vh, 160px) 28px;">
-      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #8FB4D6; font-weight: 500; transition: none;">The question I work on</div>
-      <p data-reveal="" style="font-family: 'Newsreader', serif; font-style: italic; font-weight: 400; font-size: clamp(28px, 3.8vw, 44px); line-height: 1.28; color: #EAE7E0; margin: 26px 0 0; max-width: 26ch; letter-spacing: -0.01em; text-wrap: pretty; transition: none;">"Would you let AI touch a number that goes to your board? I spent two years making the answer yes."</p>
-      <p data-reveal="" style="font-size: 17px; color: #9BA3AF; margin: 28px 0 0; max-width: 56ch; line-height: 1.65; text-wrap: pretty; transition: none;">If you lead finance or operations and you're moving AI from pilot to real cadence, that's the conversation I'm up for.</p>
-      <div data-reveal="" style="margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap;">
-        <a href="https://www.linkedin.com/in/ashwinsampangi" style="display: inline-flex; align-items: center; padding: 13px 26px; border-radius: 999px; background: #EAE7E0; color: #101318; font-weight: 600; font-size: 15px; text-decoration: none; transition: none;" style-hover="opacity: 0.85">Connect on LinkedIn</a>
-        <a href="mailto:ashwin.s.reddy@gmail.com" style="display: inline-flex; align-items: center; padding: 13px 26px; border-radius: 999px; border: 1px solid #333A45; color: #C9CFD8; font-weight: 500; font-size: 15px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; transition: none;" style-hover="border-color: #6B7480">ashwin.s.reddy@gmail.com</a>
+  <section id="contact" style="background: #101318; scroll-margin-top: 74px; position: relative; overflow: hidden;" data-screen-label="Contact">
+    <div style="position: absolute; inset: 0; background: radial-gradient(900px 460px at 85% 0%, rgba(143,180,214,0.10), transparent 60%); pointer-events: none;"></div>
+    <div style="position: relative; max-width: 1080px; margin: 0 auto; padding: clamp(96px, 17vh, 168px) clamp(20px, 4vw, 32px);">
+      <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #8FB4D6; font-weight: 500; transition: none;">The question I work on</div>
+      <p data-reveal="" style="font-family: 'Newsreader', serif; font-style: italic; font-weight: 400; font-size: clamp(29px, 3.9vw, 46px); line-height: 1.26; color: #EAE7E0; margin: 28px 0 0; max-width: 25ch; letter-spacing: -0.015em; text-wrap: balance; transition: none;">"Would you let AI touch a number that goes to your board? I spent two years making the answer yes."</p>
+      <p data-reveal="" style="font-size: 17px; color: #9BA3AF; margin: 30px 0 0; max-width: 56ch; line-height: 1.68; text-wrap: pretty; transition: none;">If you lead finance or operations and you're moving AI from pilot to real cadence, that's the conversation I'm up for.</p>
+      <div data-reveal="" style="margin-top: 42px; display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="https://www.linkedin.com/in/ashwinsampangi" class="contact-btn contact-btn-solid" style="display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 999px; background: #EAE7E0; color: #101318; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .2s cubic-bezier(0.22,1,0.36,1), opacity .2s ease;">Connect on LinkedIn</a>
+        <a href="mailto:ashwin.s.reddy@gmail.com" class="contact-btn contact-btn-ghost" style="display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 999px; border: 1px solid #333A45; color: #C9CFD8; font-weight: 500; font-size: 15px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; transition: transform .2s cubic-bezier(0.22,1,0.36,1), border-color .25s ease;">ashwin.s.reddy@gmail.com</a>
       </div>
-      <p data-reveal="" style="font-size: 13.5px; color: #6B7480; margin: 48px 0 0; transition: none;">Ashwin Kumar · VP Finance, venture-backed AI company · Own the judgment, delegate the busywork.</p>
+      <p data-reveal="" style="font-size: 13.5px; color: #6B7480; margin: 52px 0 0; transition: none;">Ashwin Kumar · VP Finance, venture-backed AI company · Own the judgment, delegate the busywork.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer style="background: #101318; border-top: 1px solid #1D232B;">
-    <div style="max-width: 1060px; margin: 0 auto; padding: 28px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 12.5px; color: #6B7480;">
+    <div style="max-width: 1080px; margin: 0 auto; padding: 30px clamp(20px, 4vw, 32px); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 12.5px; color: #6B7480;">
       <span style="transition: none;">© 2026 Ashwin Kumar.</span>
       <span style="transition: none;">Views are personal. No employer data beyond independently cleared productivity figures.</span>
     </div>
@@ -205,7 +401,6 @@ class Component extends DCLogic {
       const reveal = (el) => {
         if (el.dataset.revealed) return;
         el.dataset.revealed = '1';
-        // transition to a final inline state — element stays visible even if motion never plays
         el.style.transition = 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)';
         el.style.opacity = '1';
         el.style.transform = 'none';
@@ -225,7 +420,6 @@ class Component extends DCLogic {
           io.observe(el);
         }
       });
-      // safety net: if IO never fires (some embedded contexts), show everything
       this._failsafe = setTimeout(() => { els.forEach(reveal); }, 2500);
       this._io = io;
     }
@@ -251,15 +445,15 @@ class Component extends DCLogic {
         this.setState({ theme: next });
       },
       rungs: [
-        { n: '1', title: 'Ask', badge: null, numColor: numShades[0], titleColor: 'var(--ink)', desc: "Questions to a chatbot when you're stuck. Useful, occasional, nothing compounds." },
-        { n: '2', title: 'Draft', badge: null, numColor: numShades[1], titleColor: 'var(--ink)', desc: 'AI writes the first version, you clean it up. The ceiling is still you, from scratch.' },
-        { n: '3', title: 'Template', badge: null, numColor: numShades[2], titleColor: 'var(--ink)', desc: 'A library of saved prompts for repeat tasks. Where most strong operators stop.' },
-        { n: '4', title: 'Automate', badge: null, numColor: numShades[3], titleColor: 'var(--ink)', desc: 'Custom tools that do real work end to end, without you in the loop each time.' },
-        { n: '5', title: 'Compound', badge: 'The rare one', numColor: numShades[4], titleColor: 'var(--accent-ink)', desc: 'Judgment encoded as rules; every correction captured so it never recurs; system and operator sharpen together each cycle. The AI executes — the judgment and accountability stay with me.' },
+        { n: '1', title: 'Ask', badge: null, rowClass: '', numColor: numShades[0], titleColor: 'var(--ink)', desc: "Questions to a chatbot when you're stuck. Useful, occasional, nothing compounds." },
+        { n: '2', title: 'Draft', badge: null, rowClass: '', numColor: numShades[1], titleColor: 'var(--ink)', desc: 'AI writes the first version, you clean it up. The ceiling is still you, from scratch.' },
+        { n: '3', title: 'Template', badge: null, rowClass: '', numColor: numShades[2], titleColor: 'var(--ink)', desc: 'A library of saved prompts for repeat tasks. Where most strong operators stop.' },
+        { n: '4', title: 'Automate', badge: null, rowClass: '', numColor: numShades[3], titleColor: 'var(--ink)', desc: 'Custom tools that do real work end to end, without you in the loop each time.' },
+        { n: '5', title: 'Compound', badge: 'The rare one', rowClass: 'rung-standout', numColor: numShades[4], titleColor: 'var(--accent-ink)', desc: 'Judgment encoded as rules; every correction captured so it never recurs; system and operator sharpen together each cycle. The AI executes — the judgment and accountability stay with me.' },
       ],
       stats: [
         { big: '48', label: 'Custom workflows', desc: 'Board prep, scenario analysis, variance commentary, investor Q&A, and capital allocation — on a structured business-memory layer.' },
-        { big: '4 gates', label: 'Verification protocol', desc: 'Source attribution, recency, internal consistency, and citation — plus adversarial review and self-grading before anything ships.' },
+        { big: '4 gates', label: 'Verification protocol', desc: 'Source, recency, consistency, citation — every number and claim checked before it ships, then adversarial review and a self-grade on top.' },
         { big: '3× / 2×', label: 'Output, personal / team', desc: 'Multi-week analyses now take days; dashboards that took months take days; full adoption across the team.' },
       ],
       steps: [
@@ -272,6 +466,4 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-
 </body></html>
