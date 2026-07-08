@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Five Levels of AI in Finance — Ashwin Kumar</title>
+<meta name="description" content="Most finance leaders stall at Level 3 — a library of saved prompts. The jump that compounds is from automating tasks to encoding judgment. The five levels of using AI in a finance function, and what it takes to trust the output enough to put it in front of a board.">
+<meta property="og:title" content="The Five Levels of AI in Finance">
+<meta property="og:description" content="Most operators stop at Level 3. The jump that compounds is from automating tasks to encoding judgment — with the controls a CFO would demand.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html">
+<meta property="og:image" content="https://ashwinsampangi.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Five Levels of AI in Finance">
+<meta name="twitter:description" content="Most operators stop at Level 3. The jump that compounds is from automating tasks to encoding judgment.">
+<meta name="twitter:image" content="https://ashwinsampangi.github.io/og-image.png">
+<link rel="canonical" href="https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Five Levels of AI in Finance","description":"The five levels of using AI in a finance function, and what it takes to trust the output enough to put it in front of a board.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-07-08","dateModified":"2026-07-08","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html","image":"https://ashwinsampangi.github.io/og-image.png"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<!-- Analytics (GoatCounter): activate together with the homepage — replace MYCODE and uncomment. -->
+<!-- <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); }
+  :root {
+    --bg: #FAF8F4; --ink: #171A1E; --muted: #5C6470; --faint: #8B93A0;
+    --line: #E6E1D7; --accent: #2C5378; --accent-ink: #2C5378;
+    --tint: #F1EDE4; --card: #FFFFFF; --line-soft: #EEEAE0;
+    --accent-wash: rgba(44,83,120,0.055);
+    --shadow: 0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
+  }
+  :root[data-theme="dark"] {
+    --bg: #101318; --ink: #EAE7E0; --muted: #9BA3AF; --faint: #6B7480;
+    --line: #262B33; --accent: #2C5378; --accent-ink: #8FB4D6;
+    --tint: #171C23; --card: #151920; --line-soft: #1E232B;
+    --accent-wash: rgba(143,180,214,0.07);
+    --shadow: 0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
+  }
+  body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
+  ::selection { background: var(--accent); color: #fff; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+  .nav-link { position: relative; color: var(--muted); text-decoration: none; padding: 4px 0; }
+  .nav-link:hover { color: var(--ink); }
+  .theme-btn { transition: color .25s ease, border-color .25s ease, transform .25s ease; }
+  .theme-btn:hover { color: var(--ink); border-color: var(--faint); transform: rotate(-18deg); }
+  article { font-family: 'Instrument Sans', sans-serif; color: var(--ink); line-height: 1.72; }
+  article p { font-size: 18px; color: var(--ink); margin: 0 0 24px; max-width: 66ch; text-wrap: pretty; }
+  article h2 { font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.015em; line-height: 1.18; margin: 52px 0 18px; }
+  article h3 { font-family: 'Newsreader', serif; font-weight: 500; font-size: 22px; letter-spacing: -0.01em; margin: 34px 0 10px; }
+  article strong { font-weight: 600; }
+  article em { color: var(--accent-ink); font-style: italic; }
+  .lede { font-size: 21px !important; color: var(--muted) !important; line-height: 1.6; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+  .pull { border-left: 2px solid var(--accent-ink); padding-left: 22px; margin: 0 0 24px; font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink); max-width: 60ch; }
+  .ladder { list-style: none; padding: 0; margin: 8px 0 24px; }
+  .ladder li { border-top: 1px solid var(--line); padding: 18px 0; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: baseline; }
+  .ladder .n { font-family: 'Newsreader', serif; font-size: 34px; font-weight: 300; color: var(--faint); line-height: 1; }
+  .ladder .lv5 .n { color: var(--accent-ink); }
+  .ladder .t { font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink); }
+  .ladder .d { font-size: 16px; color: var(--muted); margin-top: 4px; max-width: 62ch; }
+  .cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: var(--shadow); }
+  @media (max-width: 640px) { .nav-links-wrap { display: none !important; } article p { font-size: 17px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div style="font-family:'Instrument Sans',sans-serif; color:var(--ink); background:var(--bg); min-height:100vh; -webkit-font-smoothing:antialiased;">
+
+  <nav style="position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid var(--line);">
+    <div class="wrap" style="height:66px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="/" style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; letter-spacing:-0.015em; color:var(--ink); text-decoration:none;">Ashwin Kumar</a>
+      <div style="display:flex; align-items:center; gap:26px;">
+        <div class="nav-links-wrap" style="display:flex; gap:26px; font-size:13.5px; font-weight:500;">
+          <a href="/#ladder" class="nav-link">The 5 levels</a>
+          <a href="/#loop" class="nav-link">How it works</a>
+          <a href="/writing/" class="nav-link">Writing</a>
+          <a href="/#contact" class="nav-link">Contact</a>
+        </div>
+        <button onclick="__tg()" aria-label="Toggle dark mode" class="theme-btn" style="width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; padding:0;"><span id="__ti">&#9790;</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header style="border-bottom:1px solid var(--line);">
+    <div class="wrap" style="padding-top:clamp(60px,10vh,96px); padding-bottom:clamp(40px,7vh,64px);">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--accent-ink); font-weight:500;">Essay &middot; Finance, run on AI</div>
+      <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(34px,5vw,56px); line-height:1.12; letter-spacing:-0.02em; margin:22px 0 0; max-width:20ch; text-wrap:balance;">The five levels of AI in finance</h1>
+      <p style="font-size:19px; color:var(--muted); margin:24px 0 0; max-width:60ch; line-height:1.6;">Most operators stop at the third. The jump that compounds is from automating tasks to encoding judgment — with the controls a CFO would demand.</p>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--faint); margin-top:26px;">Ashwin Kumar &middot; 8 July 2026</div>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top:clamp(44px,7vh,72px); padding-bottom:clamp(56px,9vh,96px);">
+    <article>
+      <p class="lede">Every finance team now has someone who "uses AI." Almost none of them can put its output in front of a board without rewriting it first. The gap between those two states is the whole game — and it has levels.</p>
+
+      <p>I have spent two years rebuilding how a finance function runs on AI. Not by buying a tool, and not by writing better prompts, but by building an operating model where AI does the volume and the judgment stays with me. Here is the ladder I use to describe it, and the one rung that actually matters.</p>
+
+      <hr class="rule">
+
+      <h2>The ladder</h2>
+      <ul class="ladder">
+        <li><span class="n">1</span><div><div class="t">Ask</div><div class="d">Questions to a chatbot when you're stuck. Useful, occasional, nothing compounds.</div></div></li>
+        <li><span class="n">2</span><div><div class="t">Draft</div><div class="d">AI writes the first version, you clean it up. The ceiling is still you, from scratch.</div></div></li>
+        <li><span class="n">3</span><div><div class="t">Template</div><div class="d">A library of saved prompts for repeat tasks. Where most strong operators stop.</div></div></li>
+        <li><span class="n">4</span><div><div class="t">Automate</div><div class="d">Custom tools that do real work end to end, without you in the loop each time.</div></div></li>
+        <li class="lv5"><span class="n">5</span><div><div class="t">Compound</div><div class="d">Judgment encoded as rules; every correction captured so it never recurs; system and operator sharpen together each cycle.</div></div></li>
+      </ul>
+
+      <p>Levels 1 through 3 feel like progress and mostly aren't. They make you faster at the tasks you already did, but the ceiling never moves — it is still your time, your attention, your willingness to re-explain the same context every morning. A prompt library is the comfortable plateau. It is genuinely useful, which is exactly why so many capable people stop there and call it transformation.</p>
+
+      <p class="pull">The jump that compounds is not from Level 3 to Level 4. It is from doing tasks to encoding judgment.</p>
+
+      <h2>Why Level 3 is a trap</h2>
+      <p>A saved prompt captures <em>what</em> you asked. It does not capture <em>why</em> you rejected the first answer. When you tell the system "this variance is correlation, not cause — don't write it that way," a template forgets that by tomorrow. You will make the same correction next month, and the month after. The work gets faster; the thinking never accumulates.</p>
+
+      <p>Level 4 — real automation — is better, but on its own it is brittle. A tool that runs end to end without you will confidently produce a wrong answer at scale, which is worse than a slow right one. Automation without encoded judgment is how AI ends up putting an unsourced number in front of people who will act on it.</p>
+
+      <h2>What Level 5 actually is</h2>
+      <p>The engine isn't the model. It's the loop. Four steps, and three of them are mine:</p>
+      <p><strong>Define</strong> — I set the ask and the standard before anything is written. <strong>Draft</strong> — the system produces at speed, and tags every figure with its source and as-of date, or flags what it can't source rather than guessing. <strong>Refine</strong> — I correct the reasoning, not just the wording. <strong>Encode</strong> — the correction becomes a standing rule, dated and reversible, applied automatically from then on.</p>
+
+      <p class="pull">Corrections work like case law. Anything I've had to say three times becomes permanent. The same mistake doesn't come back, and each cycle starts ahead of the last.</p>
+
+      <p>That is the difference between a faster analyst and a compounding system. The analyst improves while they're paying attention. The system improves whether I'm paying attention or not, because the improvement is written down.</p>
+
+      <h2>The part a CFO cares about</h2>
+      <p>None of this matters if you can't trust the output. The reason most AI never reaches a boardroom is that it can't show its work. So the discipline runs the other way: every number carries its source and its as-of date, or it doesn't ship — never a guess someone could act on. Anything headed for a board self-grades against a fixed bar and gets rewritten until it clears. That verification layer is the part most AI skips, and the only part a CFO actually cares about.</p>
+
+      <h2>What it looks like in practice</h2>
+      <p>Take monthly board variance commentary — a task that repeats every close. I define the bar: every variance over threshold gets a driver, an owner, and a next action, and volume effects are separated from rate effects. The system drafts the commentary line by line with sources attached. I refine — this cycle, it named a correlation as a driver and double-counted two effects; I fix the reasoning. Then I encode both fixes as standing rules: always split volume versus rate, never attribute a driver without a supporting cut.</p>
+
+      <p>What used to take two analysts most of a week is now a same-day first draft that already carries its sources. Next month, this cycle's two corrections are already baked in. That is the full loop on one task — and the same discipline now runs across the function.</p>
+
+      <hr class="rule">
+
+      <p style="font-size:19px;"><em>Would you let AI touch a number that goes to your board?</em> I spent two years making the answer yes. If you lead finance or operations and you're moving AI from pilot to real cadence, that's the conversation I'm up for.</p>
+      <p><a href="/#contact" class="cta">Get in touch</a></p>
+      <p style="font-size:15px; color:var(--muted); margin-top:26px;">Next essay: <a href="/writing/the-level-3-trap.html" style="color:var(--accent-ink);">The Level 3 trap</a> — the five traps that hold capable operators on the plateau.</p>
+    </article>
+  </main>
+
+  <footer style="background:#101318; border-top:1px solid #1D232B;">
+    <div class="wrap" style="padding:30px clamp(20px,4vw,32px); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:12.5px; color:#6B7480;">
+      <span>&copy; 2026 Ashwin Kumar.</span>
+      <span>Views are personal. No employer data beyond independently cleared productivity figures.</span>
+    </div>
+  </footer>
+</div>
+<script>
+  (function(){
+    try { var t = localStorage.getItem('ak-theme') || 'light'; document.documentElement.dataset.theme = t; document.getElementById('__ti').innerHTML = (t==='dark'?'☀':'☾'); } catch(e){}
+  })();
+  function __tg(){
+    var cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('ak-theme', next); } catch(e){}
+    document.getElementById('__ti').innerHTML = (next==='dark'?'☀':'☾');
+  }
+</script>
+</body></html>

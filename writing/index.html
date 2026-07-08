@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing — Ashwin Kumar</title>
+<meta name="description" content="Essays on running a finance function on AI — the five levels of AI adoption, encoding judgment, and what it takes to trust AI output enough to put it in front of a board.">
+<meta property="og:title" content="Writing — Ashwin Kumar">
+<meta property="og:description" content="Essays on running a finance function on AI: the five levels, encoding judgment, and the controls a CFO would demand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ashwinsampangi.github.io/writing/">
+<meta property="og:image" content="https://ashwinsampangi.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Writing — Ashwin Kumar">
+<meta name="twitter:description" content="Essays on running a finance function on AI.">
+<meta name="twitter:image" content="https://ashwinsampangi.github.io/og-image.png">
+<link rel="canonical" href="https://ashwinsampangi.github.io/writing/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Writing — Ashwin Kumar","url":"https://ashwinsampangi.github.io/writing/","author":{"@type":"Person","name":"Ashwin Kumar","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<!-- Analytics (GoatCounter): activate together with the homepage — replace MYCODE and uncomment. -->
+<!-- <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); }
+  :root {
+    --bg:#FAF8F4; --ink:#171A1E; --muted:#5C6470; --faint:#8B93A0;
+    --line:#E6E1D7; --accent-ink:#2C5378; --tint:#F1EDE4; --card:#FFFFFF;
+    --line-soft:#EEEAE0; --accent-wash:rgba(44,83,120,0.055);
+    --shadow:0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
+    --shadow-hover:0 2px 4px rgba(23,26,30,0.05), 0 18px 44px rgba(23,26,30,0.10);
+  }
+  :root[data-theme="dark"] {
+    --bg:#101318; --ink:#EAE7E0; --muted:#9BA3AF; --faint:#6B7480;
+    --line:#262B33; --accent-ink:#8FB4D6; --tint:#171C23; --card:#151920;
+    --line-soft:#1E232B; --accent-wash:rgba(143,180,214,0.07);
+    --shadow:0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
+    --shadow-hover:0 2px 5px rgba(0,0,0,0.35), 0 22px 52px rgba(0,0,0,0.55);
+  }
+  body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
+  ::selection { background:#2C5378; color:#fff; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 clamp(20px,4vw,32px); }
+  .nav-link { color:var(--muted); text-decoration:none; padding:4px 0; }
+  .nav-link:hover { color:var(--ink); }
+  .theme-btn { transition:color .25s ease, border-color .25s ease, transform .25s ease; }
+  .theme-btn:hover { color:var(--ink); border-color:var(--faint); transform:rotate(-18deg); }
+  .post { display:block; text-decoration:none; color:inherit; border:1px solid var(--line); border-radius:14px; background:var(--card); padding:30px clamp(22px,3vw,34px); box-shadow:var(--shadow); transition:transform .25s cubic-bezier(0.22,1,0.36,1), box-shadow .28s ease; }
+  .post:hover { transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+  .post h2 { font-family:'Newsreader',serif; font-weight:500; font-size:clamp(23px,2.6vw,30px); letter-spacing:-0.01em; margin:12px 0 0; color:var(--ink); }
+  .post p { font-size:16px; color:var(--muted); margin:12px 0 0; line-height:1.6; max-width:66ch; }
+  .kicker { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; }
+  .soon { border-style:dashed; box-shadow:none; opacity:0.72; }
+  .soon:hover { transform:none; box-shadow:none; }
+  .soon .kicker { color:var(--faint); }
+  @media (max-width:640px){ .nav-links-wrap{ display:none !important; } }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+<div style="font-family:'Instrument Sans',sans-serif; color:var(--ink); background:var(--bg); min-height:100vh; -webkit-font-smoothing:antialiased; line-height:1.6;">
+
+  <nav style="position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid var(--line);">
+    <div class="wrap" style="height:66px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="/" style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; letter-spacing:-0.015em; color:var(--ink); text-decoration:none;">Ashwin Kumar</a>
+      <div style="display:flex; align-items:center; gap:26px;">
+        <div class="nav-links-wrap" style="display:flex; gap:26px; font-size:13.5px; font-weight:500;">
+          <a href="/#ladder" class="nav-link">The 5 levels</a>
+          <a href="/#loop" class="nav-link">How it works</a>
+          <a href="/writing/" class="nav-link" style="color:var(--ink);">Writing</a>
+          <a href="/#contact" class="nav-link">Contact</a>
+        </div>
+        <button onclick="__tg()" aria-label="Toggle dark mode" class="theme-btn" style="width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; padding:0;"><span id="__ti">&#9790;</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header style="border-bottom:1px solid var(--line);">
+    <div class="wrap" style="padding-top:clamp(64px,11vh,104px); padding-bottom:clamp(40px,7vh,64px);">
+      <div class="kicker">Writing</div>
+      <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(34px,5vw,54px); line-height:1.12; letter-spacing:-0.02em; margin:20px 0 0; max-width:18ch; text-wrap:balance;">Notes on running finance on AI</h1>
+      <p style="font-size:19px; color:var(--muted); margin:22px 0 0; max-width:58ch; line-height:1.6;">How a finance function actually gets to the level where AI output can go in front of a board — the framework, the failure modes, and the controls.</p>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top:clamp(44px,7vh,68px); padding-bottom:clamp(56px,9vh,96px);">
+    <div style="display:flex; flex-direction:column; gap:20px;">
+
+      <a href="/writing/five-levels-of-ai-in-finance.html" class="post">
+        <div class="kicker">Essay &middot; 8 Jul 2026</div>
+        <h2>The five levels of AI in finance</h2>
+        <p>Most operators stop at Level 3 — a library of saved prompts. The jump that compounds is from automating tasks to encoding judgment, with the controls a CFO would demand.</p>
+      </a>
+
+      <a href="/writing/the-level-3-trap.html" class="post">
+        <div class="kicker">Essay &middot; 8 Jul 2026</div>
+        <h2>The Level 3 trap</h2>
+        <p>Why a prompt library feels like transformation and isn't — the five traps that hold capable operators on the comfortable plateau, and the one move past them.</p>
+      </a>
+
+      <div class="post soon">
+        <div class="kicker">Essay &middot; Coming next</div>
+        <h2>Corrections as case law</h2>
+        <p>How encoding every fix as a dated, reversible rule turns a fast assistant into a system that compounds.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="background:#101318; border-top:1px solid #1D232B;">
+    <div class="wrap" style="padding:30px clamp(20px,4vw,32px); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:12.5px; color:#6B7480;">
+      <span>&copy; 2026 Ashwin Kumar.</span>
+      <span>Views are personal. No employer data beyond independently cleared productivity figures.</span>
+    </div>
+  </footer>
+</div>
+<script>
+  (function(){
+    try { var t = localStorage.getItem('ak-theme') || 'light'; document.documentElement.dataset.theme = t; document.getElementById('__ti').innerHTML = (t==='dark'?'☀':'☾'); } catch(e){}
+  })();
+  function __tg(){
+    var cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('ak-theme', next); } catch(e){}
+    document.getElementById('__ti').innerHTML = (next==='dark'?'☀':'☾');
+  }
+</script>
+</body></html>
