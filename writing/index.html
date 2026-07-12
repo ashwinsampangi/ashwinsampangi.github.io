@@ -58,7 +58,17 @@
   .soon { border-style:dashed; box-shadow:none; opacity:0.72; }
   .soon:hover { transform:none; box-shadow:none; }
   .soon .kicker { color:var(--faint); }
-  @media (max-width:640px){ .nav-links-wrap{ display:none !important; } }
+  .m-toggle { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+  .m-burger { display:none; }
+  .m-menu { display:none; }
+  @media (max-width:640px){
+    .nav-links-wrap{ display:none !important; }
+    .m-burger{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; font-size:16px; line-height:1; padding:0; flex-shrink:0; user-select:none; }
+    .m-burger:hover{ color:var(--ink); border-color:var(--faint); }
+    #mnav:checked ~ .m-menu{ display:flex; flex-direction:column; gap:2px; padding:6px clamp(20px,4vw,32px) 14px; background:var(--bg); border-top:1px solid var(--line); }
+    .m-menu a{ color:var(--ink); text-decoration:none; font-weight:500; font-size:16px; padding:13px 2px; border-bottom:1px solid var(--line); }
+    .m-menu a:last-child{ border-bottom:none; }
+  }
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 </style>
 </head>
@@ -66,6 +76,7 @@
 <div style="font-family:'Instrument Sans',sans-serif; color:var(--ink); background:var(--bg); min-height:100vh; -webkit-font-smoothing:antialiased; line-height:1.6;">
 
   <nav style="position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid var(--line);">
+    <input type="checkbox" id="mnav" class="m-toggle" aria-hidden="true">
     <div class="wrap" style="height:66px; display:flex; align-items:center; justify-content:space-between;">
       <a href="/" style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; letter-spacing:-0.015em; color:var(--ink); text-decoration:none;">Ashwin Kumar</a>
       <div style="display:flex; align-items:center; gap:26px;">
@@ -77,8 +88,17 @@
           <a href="/writing/" class="nav-link" style="color:var(--ink);">Writing</a>
           <a href="/#contact" class="nav-link">Contact</a>
         </div>
+        <label for="mnav" class="m-burger" role="button" tabindex="0" aria-label="Open menu">☰</label>
         <button onclick="__tg()" aria-label="Toggle dark mode" class="theme-btn" style="width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; padding:0;"><span id="__ti">&#9790;</span></button>
       </div>
+    </div>
+    <div class="m-menu">
+      <a href="/#ladder">The 5 levels</a>
+      <a href="/#loop">How it works</a>
+      <a href="/#case">In practice</a>
+      <a href="/#proof">Proof</a>
+      <a href="/writing/">Writing</a>
+      <a href="/#contact">Contact</a>
     </div>
   </nav>
 
@@ -132,5 +152,9 @@
     try { localStorage.setItem('ak-theme', next); } catch(e){}
     document.getElementById('__ti').innerHTML = (next==='dark'?'☀':'☾');
   }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.m-menu a');
+    if (a) { var c = document.getElementById('mnav'); if (c) c.checked = false; }
+  });
 </script>
 </body></html>
