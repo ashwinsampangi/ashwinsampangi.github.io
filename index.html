@@ -200,6 +200,30 @@
       .rung { grid-template-columns: auto 1fr; gap: 16px; padding-top: 22px; padding-bottom: 22px; }
       .nav-links-wrap { display: none !important; }
     }
+
+    /* ---- mobile nav (added 2026-07-12) ---- */
+    .m-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .m-burger { display: none; }
+    .m-menu { display: none; }
+    @media (max-width: 640px) {
+      .m-burger {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line);
+        background: var(--card); color: var(--muted); cursor: pointer;
+        font-size: 16px; line-height: 1; padding: 0; flex-shrink: 0; user-select: none;
+      }
+      .m-burger:hover { color: var(--ink); border-color: var(--faint); }
+      #mnav:checked ~ .m-menu {
+        display: flex; flex-direction: column; gap: 2px;
+        padding: 6px clamp(20px, 4vw, 32px) 14px; background: var(--bg);
+        border-top: 1px solid var(--line);
+      }
+      .m-menu a {
+        color: var(--ink); text-decoration: none; font-weight: 500; font-size: 16px;
+        padding: 13px 2px; border-bottom: 1px solid var(--line);
+      }
+      .m-menu a:last-child { border-bottom: none; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .btn, .step-card, .rung, .theme-btn { transition: none !important; }
@@ -211,6 +235,7 @@
 
   <!-- NAV -->
   <nav style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid var(--line);" data-screen-label="Nav">
+    <input type="checkbox" id="mnav" class="m-toggle" aria-hidden="true">
     <div style="max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); height: 66px; display: flex; align-items: center; justify-content: space-between;">
       <a href="#top" style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink); text-decoration: none; white-space: nowrap; flex-shrink: 0;">Ashwin Kumar</a>
       <div style="display: flex; align-items: center; gap: 26px;">
@@ -222,8 +247,17 @@
           <a href="/writing/" class="nav-link">Writing</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
+        <label for="mnav" class="m-burger" role="button" tabindex="0" aria-label="Open menu">☰</label>
         <button onclick="{{ toggleTheme }}" aria-label="Toggle dark mode" class="theme-btn" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; padding: 0; flex-shrink: 0;">{{ themeIcon }}</button>
       </div>
+    </div>
+    <div class="m-menu">
+      <a href="#ladder">The 5 levels</a>
+      <a href="#loop">How it works</a>
+      <a href="#case">In practice</a>
+      <a href="#proof">Proof</a>
+      <a href="/writing/">Writing</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -466,5 +500,11 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.m-menu a');
+    if (a) { var c = document.getElementById('mnav'); if (c) c.checked = false; }
+  });
 </script>
 </body></html>
