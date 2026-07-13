@@ -18,7 +18,7 @@
 <link rel="canonical" href="https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Five Levels of AI in Finance","description":"The five levels of using AI in a finance function, and what it takes to trust the output enough to put it in front of a board.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-07-08","dateModified":"2026-07-08","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html","image":"https://ashwinsampangi.github.io/og-image.png"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Five Levels of AI in Finance","description":"The five levels of using AI in a finance function, and what it takes to trust the output enough to put it in front of a board.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-07-08","dateModified":"2026-07-13","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/five-levels-of-ai-in-finance.html","image":"https://ashwinsampangi.github.io/og-image.png"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -33,14 +33,14 @@
     --bg: #FAF8F4; --ink: #171A1E; --muted: #5C6470; --faint: #8B93A0;
     --line: #E6E1D7; --accent: #2C5378; --accent-ink: #2C5378;
     --tint: #F1EDE4; --card: #FFFFFF; --line-soft: #EEEAE0;
-    --accent-wash: rgba(44,83,120,0.055);
+    --accent-wash: rgba(44,83,120,0.055); --good: #2F6B4F; --warn: #A6572F;
     --shadow: 0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
   }
   :root[data-theme="dark"] {
     --bg: #101318; --ink: #EAE7E0; --muted: #9BA3AF; --faint: #6B7480;
     --line: #262B33; --accent: #2C5378; --accent-ink: #8FB4D6;
     --tint: #171C23; --card: #151920; --line-soft: #1E232B;
-    --accent-wash: rgba(143,180,214,0.07);
+    --accent-wash: rgba(143,180,214,0.10); --good: #6FB894; --warn: #D08A5E;
     --shadow: 0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
   }
   body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
@@ -66,6 +66,12 @@
   .ladder .t { font-family: 'Newsreader', serif; font-size: 21px; font-weight: 500; color: var(--ink); }
   .ladder .d { font-size: 16px; color: var(--muted); margin-top: 4px; max-width: 62ch; }
   .cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: var(--shadow); }
+  .fig { margin: 40px 0; border: 1px solid var(--line); border-radius: 16px; background: var(--card); padding: clamp(20px,3vw,32px); box-shadow: var(--shadow); }
+  .fig svg { display: block; width: 100%; height: auto; }
+  .fig figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em; color: var(--faint); margin-top: 16px; text-align: center; line-height: 1.5; }
+  .example { border: 1px solid var(--line); border-left: 3px solid var(--accent-ink); border-radius: 12px; background: var(--accent-wash); padding: 20px clamp(18px,2.4vw,26px); margin: 0 0 26px; }
+  .example .lab { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+  .example p { font-size: 17px; margin: 10px 0 0; }
   .m-toggle { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
   .m-burger { display:none; }
   .m-menu { display:none; }
@@ -123,22 +129,84 @@
     <article>
       <p class="lede">Every finance team now has someone who "uses AI." Almost none of them can put its output in front of a board without rewriting it first. The gap between those two states is the whole game — and it has levels.</p>
 
-      <p>I have spent two years rebuilding how a finance function runs on AI. Not by buying a tool, and not by writing better prompts, but by building an operating model where AI does the volume and the judgment stays with me. Here is the ladder I use to describe it, and the one rung that actually matters.</p>
+      <p>I have spent two years rebuilding how a finance function runs on AI. I did not buy a tool or write better prompts. I built an operating model where AI does the volume and the judgment stays with me. Here is the ladder I use to describe it, and the one rung that actually matters.</p>
 
       <hr class="rule">
 
       <h2>The ladder</h2>
       <ul class="ladder">
-        <li><span class="n">1</span><div><div class="t">Ask</div><div class="d">Questions to a chatbot when you're stuck. Useful, occasional, nothing compounds.</div></div></li>
+        <li><span class="n">1</span><div><div class="t">Ask</div><div class="d">Questions to a chatbot when you are stuck. Useful, occasional, nothing compounds.</div></div></li>
         <li><span class="n">2</span><div><div class="t">Draft</div><div class="d">AI writes the first version, you clean it up. The ceiling is still you, from scratch.</div></div></li>
         <li><span class="n">3</span><div><div class="t">Template</div><div class="d">A library of saved prompts for repeat tasks. Where most strong operators stop.</div></div></li>
         <li><span class="n">4</span><div><div class="t">Automate</div><div class="d">Custom tools that do real work end to end, without you in the loop each time.</div></div></li>
         <li class="lv5"><span class="n">5</span><div><div class="t">Compound</div><div class="d">Judgment encoded as rules; every correction captured so it never recurs; system and operator sharpen together each cycle.</div></div></li>
       </ul>
 
-      <p>Levels 1 through 3 feel like progress and mostly aren't. They make you faster at the tasks you already did, but the ceiling never moves — it is still your time, your attention, your willingness to re-explain the same context every morning. A prompt library is the comfortable plateau. It is genuinely useful, which is exactly why so many capable people stop there and call it transformation.</p>
+      <figure class="fig">
+        <svg viewBox="0 0 720 340" role="img" aria-label="Five ascending bars for the five levels. A dashed ceiling line marks the operator's own time and attention. Levels 1 to 3 sit under the ceiling; levels 4 and 5 break through it.">
+          <text x="50" y="28" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600" style="fill:var(--ink)">Where each level puts your ceiling</text>
+          <!-- baseline + y axis -->
+          <line x1="50" y1="290" x2="700" y2="290" style="stroke:var(--line);stroke-width:1.5"/>
+          <line x1="50" y1="290" x2="50" y2="48" style="stroke:var(--line);stroke-width:1.5"/>
+          <text x="612" y="308" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--faint)">more levels &#8594;</text>
+          <!-- the ceiling line -->
+          <line x1="50" y1="150" x2="700" y2="150" style="stroke:var(--warn);stroke-width:1.5;stroke-dasharray:6 6"/>
+          <text x="700" y="144" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--warn)">the ceiling: your time and attention</text>
+          <!-- bars 1-3: below the ceiling -->
+          <g style="fill:var(--card)">
+            <rect x="62" y="252" width="96" height="38" rx="3" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="182" y="220" width="96" height="70" rx="3" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="302" y="186" width="96" height="104" rx="3" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+          </g>
+          <!-- bars 4-5: break through -->
+          <rect x="422" y="118" width="96" height="172" rx="3" style="fill:var(--accent-wash);stroke:var(--accent-ink);stroke-width:1.5"/>
+          <rect x="542" y="66" width="96" height="224" rx="3" style="fill:var(--accent-wash);stroke:var(--accent-ink);stroke-width:2"/>
+          <!-- level numerals -->
+          <g font-family="Newsreader, serif" font-size="26" font-weight="400" text-anchor="middle">
+            <text x="110" y="282" style="fill:var(--faint)">1</text>
+            <text x="230" y="250" style="fill:var(--faint)">2</text>
+            <text x="350" y="216" style="fill:var(--faint)">3</text>
+            <text x="470" y="150" style="fill:var(--accent-ink)">4</text>
+            <text x="590" y="100" style="fill:var(--accent-ink)">5</text>
+          </g>
+          <!-- names under baseline -->
+          <g font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" style="fill:var(--muted)">
+            <text x="110" y="308">Ask</text><text x="230" y="308">Draft</text><text x="350" y="308">Template</text>
+            <text x="470" y="308" style="fill:var(--accent-ink)">Automate</text><text x="590" y="308" style="fill:var(--accent-ink)">Compound</text>
+          </g>
+          <!-- markers -->
+          <text x="350" y="176" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="11.5" font-weight="600" style="fill:var(--warn)">most operators stop here</text>
+          <text x="590" y="56" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="11.5" font-weight="600" style="fill:var(--accent-ink)">the ceiling moves</text>
+        </svg>
+        <figcaption>Levels 1 to 3 raise your speed but not your ceiling &#8212; it is still your time. Levels 4 and 5 break through, because the judgment is encoded, not re-supplied every run.</figcaption>
+      </figure>
+
+      <p>Levels 1 through 3 feel like progress and mostly are not. They make you faster at the tasks you already did, but the ceiling never moves — it is still your time, your attention, your willingness to re-explain the same context every morning. A prompt library is the comfortable plateau. It is genuinely useful, which is exactly why so many capable people stop there and call it transformation.</p>
 
       <p class="pull">The jump that compounds is not from Level 3 to Level 4. It is from doing tasks to encoding judgment.</p>
+
+      <figure class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="Two paths over repeated cycles. Automating tasks rises then flattens into a plateau. Encoding judgment keeps rising cycle after cycle. A marked jump separates the two.">
+          <text x="50" y="28" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600" style="fill:var(--ink)">Same start, two futures &#8212; measured over repeated cycles</text>
+          <!-- axes -->
+          <line x1="60" y1="256" x2="690" y2="256" style="stroke:var(--line);stroke-width:1.5"/>
+          <line x1="60" y1="256" x2="60" y2="52" style="stroke:var(--line);stroke-width:1.5"/>
+          <text x="600" y="274" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--faint)">each cycle &#8594;</text>
+          <!-- divergence marker -->
+          <line x1="250" y1="70" x2="250" y2="256" style="stroke:var(--faint);stroke-width:1;stroke-dasharray:4 4"/>
+          <text x="258" y="82" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--muted)">the jump: tasks &#8594; judgment</text>
+          <!-- automating tasks: rises then plateaus -->
+          <path d="M70 214 C150 176 210 158 250 156 H680" style="fill:none;stroke:var(--faint);stroke-width:2.5;stroke-dasharray:6 6"/>
+          <text x="680" y="146" text-anchor="end" font-family="Instrument Sans, sans-serif" font-size="12.5" style="fill:var(--muted)">automating tasks &#8212; faster, then flat</text>
+          <!-- encoding judgment: keeps compounding -->
+          <path d="M70 214 C150 176 210 158 250 156 C360 148 430 116 520 92 C580 76 630 64 680 56" style="fill:none;stroke:var(--accent-ink);stroke-width:2.5;stroke-linecap:round"/>
+          <g style="fill:var(--accent-ink)">
+            <circle cx="250" cy="156" r="4.5"/><circle cx="520" cy="92" r="4"/><circle cx="680" cy="56" r="4.5"/>
+          </g>
+          <text x="680" y="46" text-anchor="end" font-family="Instrument Sans, sans-serif" font-size="12.5" font-weight="600" style="fill:var(--accent-ink)">encoding judgment &#8212; each cycle starts ahead</text>
+        </svg>
+        <figcaption>Both paths feel identical for the first few cycles. Only one keeps rising after you stop pushing, because the improvement is written down.</figcaption>
+      </figure>
 
       <h2>Why Level 3 is a trap</h2>
       <p>A saved prompt captures <em>what</em> you asked. It does not capture <em>why</em> you rejected the first answer. When you tell the system "this variance is correlation, not cause — don't write it that way," a template forgets that by tomorrow. You will make the same correction next month, and the month after. The work gets faster; the thinking never accumulates.</p>
@@ -146,24 +214,31 @@
       <p>Level 4 — real automation — is better, but on its own it is brittle. A tool that runs end to end without you will confidently produce a wrong answer at scale, which is worse than a slow right one. Automation without encoded judgment is how AI ends up putting an unsourced number in front of people who will act on it.</p>
 
       <h2>What Level 5 actually is</h2>
-      <p>The engine isn't the model. It's the loop. Four steps, and three of them are mine:</p>
-      <p><strong>Define</strong> — I set the ask and the standard before anything is written. <strong>Draft</strong> — the system produces at speed, and tags every figure with its source and as-of date, or flags what it can't source rather than guessing. <strong>Refine</strong> — I correct the reasoning, not just the wording. <strong>Encode</strong> — the correction becomes a standing rule, dated and reversible, applied automatically from then on.</p>
+      <p>The engine is not the model. It is the loop. Four steps, and three of them are mine:</p>
+      <p><strong>Define.</strong> I set the ask and the standard before anything is written. <strong>Draft.</strong> The system produces at speed, and tags every figure with its source and as-of date, or flags what it cannot source rather than guessing. <strong>Refine.</strong> I correct the reasoning, not just the wording. <strong>Encode.</strong> The correction becomes a standing rule, dated and reversible, applied automatically from then on.</p>
 
-      <p class="pull">Corrections work like case law. Anything I've had to say three times becomes permanent. The same mistake doesn't come back, and each cycle starts ahead of the last.</p>
+      <p class="pull">Corrections work like case law. Anything I have had to say three times becomes permanent. The same mistake does not come back, and each cycle starts ahead of the last.</p>
 
-      <p>That is the difference between a faster analyst and a compounding system. The analyst improves while they're paying attention. The system improves whether I'm paying attention or not, because the improvement is written down.</p>
+      <p>That is the difference between a faster analyst and a compounding system. The analyst improves while they are paying attention. The system improves whether I am paying attention or not, because the improvement is written down.</p>
 
       <h2>The part a CFO cares about</h2>
-      <p>None of this matters if you can't trust the output. The reason most AI never reaches a boardroom is that it can't show its work. So the discipline runs the other way: every number carries its source and its as-of date, or it doesn't ship — never a guess someone could act on. Anything headed for a board self-grades against a fixed bar and gets rewritten until it clears. That verification layer is the part most AI skips, and the only part a CFO actually cares about.</p>
+      <p>None of this matters if you cannot trust the output. The reason most AI never reaches a boardroom is that it cannot show its work. So the discipline runs the other way: every number carries its source and its as-of date, or it does not ship — never a guess someone could act on. Anything headed for a board self-grades against a fixed bar and gets rewritten until it clears. That verification layer is the part most AI skips, and the only part a CFO actually cares about.</p>
 
       <h2>What it looks like in practice</h2>
-      <p>Take the quarterly board update package — a task that repeats each quarter. Zoom into one component, the variance commentary: I define the bar: every variance over threshold gets a driver, an owner, and a next action, and volume effects are separated from rate effects. The system drafts the commentary line by line with sources attached. I refine — this cycle, it named a correlation as a driver and double-counted two effects; I fix the reasoning. Then I encode both fixes as standing rules: always split volume versus rate, never attribute a driver without a supporting cut.</p>
+      <p>Take the quarterly board update package — a task that repeats each quarter. Zoom into one component, the variance commentary. I define the bar: every variance over threshold gets a driver, an owner, and a next action, and volume effects are separated from rate effects. The system drafts the commentary line by line with sources attached. Then I refine — and the correction is where the judgment lives.</p>
 
-      <p>What used to take two analysts most of a week is now a same-day first draft that already carries its sources. Next quarter, this cycle's two corrections are already baked in. That is the full loop on one task — and the same discipline now runs across the function.</p>
+      <div class="example">
+        <div class="lab">One line of the draft, corrected</div>
+        <p>Operating spend came in at <strong>$2.4M</strong> against a <strong>$2.0M</strong> plan — over by <strong>$400K</strong>, or 20%. The draft writes: <em>"Spend rose 20% on higher costs."</em> Plausible, and wrong. Pull the detail and <strong>$360K</strong> of the gap is timing — invoices planned for next quarter simply landed in this one — while only <strong>$40K</strong> is a real rate increase. Report "costs rose 20%" and the board cuts a budget that was never overspent. The reasoning fix: <em>separate timing from rate, and never call a slipped invoice an overrun.</em></p>
+      </div>
+
+      <p>This cycle the draft also named a correlation as a driver and double-counted two effects; I fix the reasoning there too. Then I encode the fixes as standing rules: split timing from rate, split volume from price, and never attribute a driver without a supporting cut.</p>
+
+      <p>What used to take two analysts most of a week is now a same-day first draft that already carries its sources. Next quarter, this cycle's corrections are already baked in. That is the full loop on one task — and the same discipline now runs across the function.</p>
 
       <hr class="rule">
 
-      <p style="font-size:19px;"><em>Would you let AI touch a number that goes to your board?</em> I spent two years making the answer yes. If you lead finance or operations and you're moving AI from pilot to real cadence, that's the conversation I'm up for.</p>
+      <p style="font-size:19px;"><em>Would you let AI touch a number that goes to your board?</em> I spent two years making the answer yes. If you lead finance or operations and you are moving AI from pilot to real cadence, that is the conversation I am up for.</p>
       <p><a href="/#contact" class="cta">Get in touch</a></p>
       <p style="font-size:15px; color:var(--muted); margin-top:26px;">Next essay: <a href="/writing/the-level-3-trap.html" style="color:var(--accent-ink);">The Level 3 trap</a> — the five traps that hold capable operators on the plateau.</p>
     </article>

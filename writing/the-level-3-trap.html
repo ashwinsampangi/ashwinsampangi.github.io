@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Level 3 Trap — Ashwin Kumar</title>
-<meta name="description" content="A prompt library feels like transformation. It isn't. Five traps that hold capable operators on the Level 3 plateau of AI — and the one move that gets past them.">
+<meta name="description" content="A prompt library feels like transformation. It is not. Five traps that hold capable operators on the Level 3 plateau of AI — and the one move that gets past them.">
 <meta property="og:title" content="The Level 3 Trap">
 <meta property="og:description" content="Five traps that keep capable operators stuck at a prompt library — and the one move that gets past them.">
 <meta property="og:type" content="article">
@@ -18,7 +18,7 @@
 <link rel="canonical" href="https://ashwinsampangi.github.io/writing/the-level-3-trap.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"The Level 3 Trap","description":"Five traps that hold capable operators on the Level 3 plateau of AI — and the one move that gets past them.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-07-08","dateModified":"2026-07-08","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/the-level-3-trap.html","image":"https://ashwinsampangi.github.io/og-image.png"}
+{"@context":"https://schema.org","@type":"Article","headline":"The Level 3 Trap","description":"Five traps that hold capable operators on the Level 3 plateau of AI — and the one move that gets past them.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-07-08","dateModified":"2026-07-13","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/the-level-3-trap.html","image":"https://ashwinsampangi.github.io/og-image.png"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -33,14 +33,14 @@
     --bg: #FAF8F4; --ink: #171A1E; --muted: #5C6470; --faint: #8B93A0;
     --line: #E6E1D7; --accent: #2C5378; --accent-ink: #2C5378;
     --tint: #F1EDE4; --card: #FFFFFF; --line-soft: #EEEAE0;
-    --accent-wash: rgba(44,83,120,0.055);
+    --accent-wash: rgba(44,83,120,0.055); --good: #2F6B4F; --warn: #A6572F;
     --shadow: 0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
   }
   :root[data-theme="dark"] {
     --bg: #101318; --ink: #EAE7E0; --muted: #9BA3AF; --faint: #6B7480;
     --line: #262B33; --accent: #2C5378; --accent-ink: #8FB4D6;
     --tint: #171C23; --card: #151920; --line-soft: #1E232B;
-    --accent-wash: rgba(143,180,214,0.07);
+    --accent-wash: rgba(143,180,214,0.10); --good: #6FB894; --warn: #D08A5E;
     --shadow: 0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
   }
   body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
@@ -63,6 +63,12 @@
   .rule { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
   .pull { border-left: 2px solid var(--accent-ink); padding-left: 22px; margin: 0 0 24px; font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink); max-width: 60ch; }
   .cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: var(--shadow); }
+  .fig { margin: 40px 0; border: 1px solid var(--line); border-radius: 16px; background: var(--card); padding: clamp(20px,3vw,32px); box-shadow: var(--shadow); }
+  .fig svg { display: block; width: 100%; height: auto; }
+  .fig figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em; color: var(--faint); margin-top: 16px; text-align: center; line-height: 1.5; }
+  .example { border: 1px solid var(--line); border-left: 3px solid var(--accent-ink); border-radius: 12px; background: var(--accent-wash); padding: 20px clamp(18px,2.4vw,26px); margin: 0 0 26px; }
+  .example .lab { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+  .example p { font-size: 17px; margin: 10px 0 0; }
   .m-toggle { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
   .m-burger { display:none; }
   .m-menu { display:none; }
@@ -111,43 +117,113 @@
     <div class="wrap" style="padding-top:clamp(60px,10vh,96px); padding-bottom:clamp(40px,7vh,64px);">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--accent-ink); font-weight:500;">Essay &middot; Finance, run on AI</div>
       <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(34px,5vw,56px); line-height:1.12; letter-spacing:-0.02em; margin:22px 0 0; max-width:20ch; text-wrap:balance;">The Level 3 trap</h1>
-      <p style="font-size:19px; color:var(--muted); margin:24px 0 0; max-width:60ch; line-height:1.6;">A prompt library feels like transformation. It isn't. Five traps that keep capable people on the plateau — and the one move past them.</p>
+      <p style="font-size:19px; color:var(--muted); margin:24px 0 0; max-width:60ch; line-height:1.6;">A prompt library feels like transformation. It is not. Five traps that keep capable people on the plateau — and the one move past them.</p>
       <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--faint); margin-top:26px;">Ashwin Kumar &middot; 8 July 2026 &middot; <a href="/writing/five-levels-of-ai-in-finance.html" style="color:var(--accent-ink); text-decoration:none;">Companion to "The five levels"</a></div>
     </div>
   </header>
 
   <main class="wrap" style="padding-top:clamp(44px,7vh,72px); padding-bottom:clamp(56px,9vh,96px);">
     <article>
-      <p class="lede">Level 3 is a prompt library — a folder of saved instructions for the tasks you repeat. It is the most comfortable place on the ladder, and it is where most strong operators quietly stop. Not because they can't go further. Because Level 3 feels like the destination.</p>
+      <p class="lede">Level 3 is a prompt library — a folder of saved instructions for the tasks you repeat. It is the most comfortable place on the ladder, and it is where most strong operators quietly stop. Not because they cannot go further. Because Level 3 feels like the destination.</p>
 
-      <p>It isn't. It's a plateau that does a very good impression of a summit. Here is how it holds you, in five traps I've watched catch smart people — including, for a while, me.</p>
+      <p>It is not. It is a plateau that does a very good impression of a summit. Here is how it holds you, in five traps I have watched catch smart people — including, for a while, me.</p>
+
+      <figure class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="A capability curve that rises fast in the first months of using a prompt library, then flattens into a long plateau. A dashed line shows the higher path that corrections would unlock if they were kept.">
+          <text x="50" y="28" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600" style="fill:var(--ink)">What a prompt library does to your capability over time</text>
+          <!-- axes -->
+          <line x1="60" y1="252" x2="690" y2="252" style="stroke:var(--line);stroke-width:1.5"/>
+          <line x1="60" y1="252" x2="60" y2="52" style="stroke:var(--line);stroke-width:1.5"/>
+          <text x="560" y="272" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--faint)">months using it &#8594;</text>
+          <!-- filled area under the plateau curve -->
+          <path d="M70 226 C120 152 200 120 262 114 L680 110 L680 252 L70 252 Z" style="fill:var(--accent-wash);stroke:none"/>
+          <!-- the plateau curve -->
+          <path d="M70 226 C120 152 200 120 262 114 L680 110" style="fill:none;stroke:var(--accent-ink);stroke-width:2.5;stroke-linecap:round"/>
+          <!-- dashed continuation: what compounding would do -->
+          <path d="M262 114 C360 98 470 72 660 42" style="fill:none;stroke:var(--faint);stroke-width:2;stroke-dasharray:6 6"/>
+          <text x="660" y="34" text-anchor="end" font-family="Instrument Sans, sans-serif" font-size="12.5" style="fill:var(--muted)">if corrections were kept, it keeps rising</text>
+          <!-- plateau label -->
+          <text x="470" y="100" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600" style="fill:var(--accent-ink)">the plateau &#8212; Level 3</text>
+          <!-- stop marker -->
+          <circle cx="300" cy="113" r="5" style="fill:var(--warn)"/>
+          <text x="300" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--warn)">climbing stops here</text>
+        </svg>
+        <figcaption>The library buys you the early rise, then nothing. The dashed line is the altitude you leave on the table when corrections do not survive the night.</figcaption>
+      </figure>
 
       <hr class="rule">
 
-      <div class="trap"><span class="n">1</span><div><div class="t">The library illusion</div><p>A pile of saved prompts feels like a system. It's a filing cabinet. A system remembers <em>why</em> you rejected the last answer; a library only remembers <em>what</em> you asked. You feel organized while nothing actually accumulates.</p></div></div>
+      <div class="trap"><span class="n">1</span><div><div class="t">The library illusion</div><p>A pile of saved prompts feels like a system. It is a filing cabinet. A system remembers <em>why</em> you rejected the last answer; a library only remembers <em>what</em> you asked. You feel organized while nothing actually accumulates.</p></div></div>
 
-      <div class="trap"><span class="n">2</span><div><div class="t">The speed mirage</div><p>You got faster at the tasks you already did, so it feels like a step change. But your ceiling never moved — it's still your time, your attention, your hands on every output. Faster typing is not a higher altitude.</p></div></div>
+      <div class="trap"><span class="n">2</span><div><div class="t">The speed mirage</div><p>You got faster at the tasks you already did, so it feels like a step change. But your ceiling never moved — it is still your time, your attention, your hands on every output. Faster typing is not a higher altitude.</p></div></div>
 
-      <div class="trap"><span class="n">3</span><div><div class="t">The trust tax</div><p>You don't trust the output enough to stop checking it line by line, so you never hand over the volume. You've automated the drafting and kept all the reviewing. That's not delegation — it's the same workload wearing a new coat.</p></div></div>
+      <div class="trap"><span class="n">3</span><div><div class="t">The trust tax</div><p>You do not trust the output enough to stop checking it line by line, so you never hand over the volume. You have automated the drafting and kept all the reviewing. That is not delegation. It is the same workload in a new coat.</p></div></div>
 
-      <div class="trap"><span class="n">4</span><div><div class="t">The re-explaining loop</div><p>The tool forgets your corrections overnight. You fix the same mistake this month that you fixed last month, because the fix lived in your head, not in the system. Effort repeats; learning doesn't.</p></div></div>
+      <div class="trap"><span class="n">4</span><div><div class="t">The re-explaining loop</div><p>The tool forgets your corrections overnight. You fix the same mistake this month that you fixed last month, because the fix lived in your head, not in the system. Effort repeats; learning does not.</p></div></div>
 
-      <div class="trap"><span class="n">5</span><div><div class="t">The ownership fear</div><p>The quiet one underneath the rest: a worry that if the AI does more, you're worth less. It's backwards. Encoding your judgment makes you <em>more</em> valuable, because the system now carries your standard, not just your labour — and a standard scales in a way that hours never will.</p></div></div>
+      <div class="trap"><span class="n">5</span><div><div class="t">The ownership fear</div><p>The quiet one underneath the rest: a worry that if the AI does more, you are worth less. It is backwards. Encoding your judgment makes you <em>more</em> valuable, because the system now carries your standard, not just your labour — and a standard scales in a way that hours never will.</p></div></div>
+
+      <figure class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="A horizontal bar labelled the Level 3 plateau, with a struck-out dashed arrow showing the climb that is skipped, and five numbered chips beneath naming the five traps that hold you on the plateau.">
+          <text x="50" y="28" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600" style="fill:var(--ink)">Five traps, one plateau</text>
+          <!-- plateau bar -->
+          <rect x="60" y="60" width="560" height="42" rx="12" style="fill:var(--accent-wash);stroke:var(--accent-ink);stroke-width:1.5"/>
+          <text x="340" y="86" text-anchor="middle" font-family="Newsreader, serif" font-size="18" font-weight="500" style="fill:var(--accent-ink)">The Level 3 plateau</text>
+          <!-- blocked ascent -->
+          <path d="M628 78 C656 66 672 56 690 44" style="fill:none;stroke:var(--faint);stroke-width:2;stroke-dasharray:5 5"/>
+          <line x1="650" y1="52" x2="668" y2="68" style="stroke:var(--warn);stroke-width:2"/>
+          <line x1="668" y1="52" x2="650" y2="68" style="stroke:var(--warn);stroke-width:2"/>
+          <text x="628" y="40" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--warn)">the climb you skip</text>
+          <!-- tethers -->
+          <g style="stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 4">
+            <line x1="118" y1="102" x2="118" y2="172"/>
+            <line x1="238" y1="102" x2="238" y2="172"/>
+            <line x1="358" y1="102" x2="358" y2="172"/>
+            <line x1="478" y1="102" x2="478" y2="172"/>
+            <line x1="598" y1="102" x2="598" y2="172"/>
+          </g>
+          <text x="358" y="140" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" style="fill:var(--muted)">five things that keep you here</text>
+          <!-- chips -->
+          <g style="fill:var(--card)">
+            <rect x="62" y="172" width="112" height="70" rx="11" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="182" y="172" width="112" height="70" rx="11" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="302" y="172" width="112" height="70" rx="11" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="422" y="172" width="112" height="70" rx="11" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+            <rect x="542" y="172" width="112" height="70" rx="11" style="fill:var(--card);stroke:var(--line);stroke-width:1.5"/>
+          </g>
+          <g font-family="Newsreader, serif" font-size="20" font-weight="400" text-anchor="middle" style="fill:var(--faint)">
+            <text x="118" y="200">1</text><text x="238" y="200">2</text><text x="358" y="200">3</text><text x="478" y="200">4</text><text x="598" y="200">5</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" text-anchor="middle" style="fill:var(--muted)">
+            <text x="118" y="220">library</text><text x="118" y="233">illusion</text>
+            <text x="238" y="220">speed</text><text x="238" y="233">mirage</text>
+            <text x="358" y="220">trust</text><text x="358" y="233">tax</text>
+            <text x="478" y="220">re-explaining</text><text x="478" y="233">loop</text>
+            <text x="598" y="220">ownership</text><text x="598" y="233">fear</text>
+          </g>
+        </svg>
+        <figcaption>Any one of the five is enough to keep you on the plateau. The exit is the same regardless of which one caught you.</figcaption>
+      </figure>
+
+      <div class="example">
+        <div class="lab">The plateau, in numbers</div>
+        <p>Say you save one strong prompt for the monthly spend commentary. Month one, it cuts your drafting from about <strong>five hours to ninety minutes</strong>. That feels like the summit. But every month you re-type the same three corrections by hand: <em>a timing difference is not an overspend; separate headcount cost from vendor cost; source every figure.</em> Six months in, the draft still lands at <strong>ninety minutes</strong> — because you have made those same three corrections roughly <strong>eighteen times</strong>, and the library kept none of them. It saved the keystrokes and threw away the judgment. That flat line is the plateau. The prompt was never the problem; the problem is that your corrections die overnight.</p>
+      </div>
 
       <hr class="rule">
 
       <h2>The one move past the plateau</h2>
-      <p>Escaping Level 3 is not a better prompt library. It's a different shape of work. Stop saving instructions and start running a loop: you define the standard, the system drafts at speed, you correct the <em>reasoning</em> — and then you write the correction down as a permanent rule the system applies from then on.</p>
+      <p>Escaping Level 3 is not a better prompt library. It is a different shape of work. Stop saving instructions and start running a loop: you define the standard, the system drafts at speed, you correct the <em>reasoning</em> — and then you write the correction down as a permanent rule the system applies from then on.</p>
 
       <p class="pull">A template captures what you asked. A rule captures what you know. The difference between a fast assistant and a compounding system is whether your corrections survive the night.</p>
 
-      <p>That last step — encoding the fix — is the move. Anything you've had to say three times becomes a standing rule, dated and reversible. The same mistake stops coming back. Each cycle starts ahead of the last. That's the climb out, and the only part of the ladder where the altitude keeps rising without you pushing.</p>
+      <p>That last step — encoding the fix — is the move. Anything you have had to say three times becomes a standing rule, dated and reversible. The same mistake stops coming back. Each cycle starts ahead of the last. That is the climb out, and the only part of the ladder where the altitude keeps rising without you pushing.</p>
 
-      <p>Level 3 will let you stay as long as you like. The exit is unglamorous: write down the corrections you're currently making from memory, and make the system obey them. Do that for one recurring task and you'll feel the floor start to move.</p>
+      <p>Level 3 will let you stay as long as you like. The exit is unglamorous: write down the corrections you are currently making from memory, and make the system obey them. Do that for one recurring task and you will feel the floor start to move.</p>
 
       <hr class="rule">
 
-      <p style="font-size:19px;">If you lead finance or operations and you're stuck at the prompt-library plateau, that's the conversation I'm up for.</p>
+      <p style="font-size:19px;">If you lead finance or operations and you are stuck at the prompt-library plateau, that is the conversation I am up for.</p>
       <p><a href="/#contact" class="cta">Get in touch</a></p>
     </article>
   </main>
