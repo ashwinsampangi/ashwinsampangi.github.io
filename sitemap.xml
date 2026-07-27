@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://ashwinsampangi.github.io/writing/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,5 +33,11 @@
   <url>
     <loc>https://ashwinsampangi.github.io/writing/the-compiler-in-your-head.html</loc>
     <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://ashwinsampangi.github.io/writing/finance-hire.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
