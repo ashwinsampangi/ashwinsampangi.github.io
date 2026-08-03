@@ -58,6 +58,19 @@
   .soon { border-style:dashed; box-shadow:none; opacity:0.72; }
   .soon:hover { transform:none; box-shadow:none; }
   .soon .kicker { color:var(--faint); }
+  /* Field Notes strip — short-form weekly notes, lighter than the essay cards. */
+  .fieldnotes { border-top:1px solid var(--line); margin-top:clamp(48px,7vh,72px); padding-top:clamp(36px,5vh,52px); }
+  .fieldnotes .fn-intro { font-size:16px; color:var(--muted); margin:12px 0 0; max-width:60ch; line-height:1.6; }
+  .fn-list { display:flex; flex-direction:column; margin-top:clamp(20px,3vh,28px); }
+  .fnote { display:flex; align-items:baseline; gap:clamp(12px,2vw,26px); text-decoration:none; color:inherit; padding:16px 6px; border-top:1px solid var(--line-soft); transition:background-color .25s ease, padding-left .25s ease; }
+  .fnote:first-child { border-top:none; }
+  .fnote:hover { background:var(--accent-wash); padding-left:14px; }
+  .fnote-date { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); font-weight:500; flex:0 0 auto; min-width:104px; padding-top:2px; }
+  .fnote-title { font-family:'Newsreader',serif; font-weight:500; font-size:clamp(18px,2vw,21px); letter-spacing:-0.01em; color:var(--ink); margin:0; }
+  @media (max-width:560px){
+    .fnote{ flex-direction:column; gap:4px; }
+    .fnote-date{ min-width:0; }
+  }
   .m-toggle { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
   .m-burger { display:none; }
   .m-menu { display:none; }
@@ -134,7 +147,7 @@
       <a href="/writing/the-level-3-trap.html" class="post">
         <div class="kicker">Essay &middot; 8 Jul 2026</div>
         <h2>The Level 3 trap</h2>
-        <p>Why a prompt library feels like transformation and isn't — the five traps that hold capable operators on the comfortable plateau, and the one move past them.</p>
+        <p>Why a prompt library feels like transformation and is not — the five traps that hold capable operators on the comfortable plateau, and the one move past them.</p>
       </a>
 
       <a href="/writing/corrections-as-case-law.html" class="post">
@@ -143,7 +156,97 @@
         <p>How encoding every fix as a dated, reversible rule turns a fast assistant into a system that compounds.</p>
       </a>
 
+      <!-- PUBLISH-DAY: uncomment on 14 Sep 2026 -->
+      <!--
+      <a href="/writing/four-gates.html" class="post">
+        <div class="kicker">Essay &middot; 14 Sep 2026</div>
+        <h2>The Four Gates</h2>
+        <p>The four checks every AI-drafted number clears before it reaches a board — a source and an as-of date, a staleness check, internal consistency, and attribution — and why refusing to guess is a feature.</p>
+      </a>
+      -->
+
+      <!-- PUBLISH-DAY: uncomment on 24 Aug 2026 -->
+      <!--
+      <a href="/writing/team-ladder.html" class="post">
+        <div class="kicker">Essay &middot; 24 Aug 2026</div>
+        <h2>A Team Does Not Climb Like a Person</h2>
+        <p>An individual climbs the AI ladder on skill; a team climbs on written standards and encoded corrections. Why the function's ladder is an operating-model problem, not an effort one.</p>
+      </a>
+      -->
+
+      <!-- PUBLISH-DAY: uncomment on 21 Sep 2026 -->
+      <!--
+      <a href="/writing/data-boundaries.html" class="post">
+        <div class="kicker">Essay &middot; 21 Sep 2026</div>
+        <h2>What never goes into the model</h2>
+        <p>An AI-run finance function earns the right to operate by deciding, in advance and in writing, what the model is never allowed to see. The data boundary is the first decision, not the last.</p>
+      </a>
+      -->
+
+      <!-- PUBLISH-DAY: uncomment on 17 Aug 2026 -->
+      <!--
+      <a href="/writing/quiet-failures.html" class="post">
+        <div class="kicker">Essay &middot; 17 Aug 2026</div>
+        <h2>The failures that pass review</h2>
+        <p>The dangerous failures are not the loud ones. They are the drafts that look more finished than they are — five quiet failure modes a reviewer owns, each with the tell that catches it.</p>
+      </a>
+      -->
+
+      <!-- PUBLISH-DAY: uncomment on 5 Oct 2026 -->
+      <!--
+      <a href="/writing/board-variance-page.html" class="post">
+        <div class="kicker">Essay &middot; 5 Oct 2026</div>
+        <h2>What a board actually reads on a variance page</h2>
+        <p>The page is written for completeness and read for consequence. Three questions a director is actually answering, and how to write the page so it answers them first.</p>
+      </a>
+      -->
+
     </div>
+
+    <section class="fieldnotes" aria-labelledby="fieldnotes-heading">
+      <h2 id="fieldnotes-heading" style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.4vw,36px); line-height:1.15; letter-spacing:-0.02em; margin:14px 0 0; color:var(--ink);">Field Notes</h2>
+      <p class="fn-intro">Shorter notes from practice. One concept, one example, one takeaway. Published on alternate Mondays.</p>
+      <div class="fn-list">
+
+        <a href="/writing/stale-mirror.html" class="fnote">
+          <span class="fnote-date">3 Aug 2026</span>
+          <span class="fnote-title">The stale mirror</span>
+        </a>
+
+        <!-- PUBLISH-DAY: uncomment on 10 Aug 2026 -->
+        <!--
+        <a href="/writing/system-says-no.html" class="fnote">
+          <span class="fnote-date">10 Aug 2026</span>
+          <span class="fnote-title">When the system says no</span>
+        </a>
+        -->
+
+        <!-- PUBLISH-DAY: uncomment on 31 Aug 2026 -->
+        <!--
+        <a href="/writing/agreement-control-failure.html" class="fnote">
+          <span class="fnote-date">31 Aug 2026</span>
+          <span class="fnote-title">The reviewer who always agrees</span>
+        </a>
+        -->
+
+        <!-- PUBLISH-DAY: uncomment on 28 Sep 2026 -->
+        <!--
+        <a href="/writing/one-way-door.html" class="fnote">
+          <span class="fnote-date">28 Sep 2026</span>
+          <span class="fnote-title">One-way doors</span>
+        </a>
+        -->
+
+        <!-- PUBLISH-DAY: uncomment on 7 Sep 2026 -->
+        <!--
+        <a href="/writing/dissent-on-record.html" class="fnote">
+          <span class="fnote-date">7 Sep 2026</span>
+          <span class="fnote-title">Dissent, on the record</span>
+        </a>
+        -->
+
+      </div>
+    </section>
   </main>
 
   <footer style="background:#101318; border-top:1px solid #1D232B;">
