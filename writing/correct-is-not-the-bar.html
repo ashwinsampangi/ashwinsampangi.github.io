@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correct Is Not the Bar — Ashwin Kumar</title>
+<meta name="description" content="An essay I finished, had reviewed, and threw away with nothing wrong in it. Why redundancy survives review, and why the fix is a record rather than a rule.">
+<meta property="og:title" content="Correct Is Not the Bar">
+<meta property="og:description" content="A review that only asks whether the work is right will pass work that changes nothing. Catching that is not a matter of more discipline.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ashwinsampangi.github.io/writing/correct-is-not-the-bar.html">
+<meta property="og:image" content="https://ashwinsampangi.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Correct Is Not the Bar">
+<meta name="twitter:description" content="A review that only asks whether the work is right will pass work that changes nothing. Catching that is not a matter of more discipline.">
+<meta name="twitter:image" content="https://ashwinsampangi.github.io/og-image.png">
+<link rel="canonical" href="https://ashwinsampangi.github.io/writing/correct-is-not-the-bar.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232C5378'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23FAF8F4' text-anchor='middle'%3EAK%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Correct Is Not the Bar","description":"A review that only asks whether the work is right will pass work that changes nothing. Catching that is not a matter of more discipline.","author":{"@type":"Person","name":"Ashwin Kumar","jobTitle":"VP Finance","url":"https://ashwinsampangi.github.io/","sameAs":["https://www.linkedin.com/in/ashwinsampangi"]},"publisher":{"@type":"Person","name":"Ashwin Kumar"},"datePublished":"2026-09-07","dateModified":"2026-09-07","mainEntityOfPage":"https://ashwinsampangi.github.io/writing/correct-is-not-the-bar.html","image":"https://ashwinsampangi.github.io/og-image.png"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<!-- Analytics (GoatCounter) — activated 2026-07-08 (site: ashwinsampangi.goatcounter.com). -->
+<script data-goatcounter="https://ashwinsampangi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); }
+  :root {
+    --bg: #FAF8F4; --ink: #171A1E; --muted: #5C6470; --faint: #8B93A0;
+    --line: #E6E1D7; --accent: #2C5378; --accent-ink: #2C5378;
+    --tint: #F1EDE4; --card: #FFFFFF; --line-soft: #EEEAE0;
+    --accent-wash: rgba(44,83,120,0.055); --good: #2F6B4F; --warn: #A6572F;
+    --shadow: 0 1px 2px rgba(23,26,30,0.04), 0 8px 28px rgba(23,26,30,0.06);
+  }
+  :root[data-theme="dark"] {
+    --bg: #101318; --ink: #EAE7E0; --muted: #9BA3AF; --faint: #6B7480;
+    --line: #262B33; --accent: #2C5378; --accent-ink: #8FB4D6;
+    --tint: #171C23; --card: #151920; --line-soft: #1E232B;
+    --accent-wash: rgba(143,180,214,0.10); --good: #6FB894; --warn: #D08A5E;
+    --shadow: 0 1px 2px rgba(0,0,0,0.30), 0 12px 34px rgba(0,0,0,0.42);
+  }
+  body, body * { transition: background-color .35s ease, color .35s ease, border-color .35s ease; }
+  ::selection { background: var(--accent); color: #fff; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+  .nav-link { position: relative; color: var(--muted); text-decoration: none; padding: 4px 0; }
+  .nav-link:hover { color: var(--ink); }
+  .theme-btn { transition: color .25s ease, border-color .25s ease, transform .25s ease; }
+  .theme-btn:hover { color: var(--ink); border-color: var(--faint); transform: rotate(-18deg); }
+  article { font-family: 'Instrument Sans', sans-serif; color: var(--ink); line-height: 1.72; }
+  article p { font-size: 18px; color: var(--ink); margin: 0 0 24px; max-width: 66ch; text-wrap: pretty; }
+  article h2 { font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.015em; line-height: 1.18; margin: 52px 0 18px; }
+  article strong { font-weight: 600; }
+  article em { color: var(--accent-ink); font-style: italic; }
+  .lede { font-size: 21px !important; color: var(--muted) !important; line-height: 1.6; }
+  .fig { margin: 40px 0; border: 1px solid var(--line); border-radius: 16px; background: var(--card); padding: clamp(20px,3vw,32px); box-shadow: var(--shadow); }
+  .fig svg { display: block; width: 100%; height: auto; }
+  .fig figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em; color: var(--faint); margin-top: 16px; text-align: center; line-height: 1.5; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+  .pull { border-left: 2px solid var(--accent-ink); padding-left: 22px; margin: 0 0 24px; font-family: 'Newsreader', serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink); max-width: 60ch; }
+  .cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none; box-shadow: var(--shadow); }
+  .rk { display: grid; grid-template-columns: 118px 1fr; gap: 16px; padding: 14px 0; border-top: 1px dashed var(--line); align-items: baseline; }
+  .rk .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+  .rk .v { font-size: 17px; color: var(--ink); line-height: 1.55; }
+  @media (max-width: 480px) { .rk { grid-template-columns: 1fr; gap: 4px; } }
+  .m-toggle { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+  .m-burger { display:none; }
+  .m-menu { display:none; }
+  @media (max-width: 640px) {
+    .nav-links-wrap { display: none !important; } article p { font-size: 17px; }
+    .m-burger{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; font-size:16px; line-height:1; padding:0; flex-shrink:0; user-select:none; }
+    .m-burger:hover{ color:var(--ink); border-color:var(--faint); }
+    #mnav:checked ~ .m-menu{ display:flex; flex-direction:column; gap:2px; padding:6px clamp(20px,4vw,32px) 14px; background:var(--bg); border-top:1px solid var(--line); }
+    .m-menu a{ color:var(--ink); text-decoration:none; font-weight:500; font-size:16px; padding:13px 2px; border-bottom:1px solid var(--line); }
+    .m-menu a:last-child{ border-bottom:none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div style="font-family:'Instrument Sans',sans-serif; color:var(--ink); background:var(--bg); min-height:100vh; -webkit-font-smoothing:antialiased;">
+
+  <nav style="position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4); border-bottom:1px solid var(--line);">
+    <input type="checkbox" id="mnav" class="m-toggle" aria-hidden="true">
+    <div class="wrap" style="height:66px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="/" style="font-family:'Newsreader',serif; font-size:20px; font-weight:500; letter-spacing:-0.015em; color:var(--ink); text-decoration:none;">Ashwin Kumar</a>
+      <div style="display:flex; align-items:center; gap:26px;">
+        <div class="nav-links-wrap" style="display:flex; gap:26px; font-size:13.5px; font-weight:500;">
+          <a href="/#ladder" class="nav-link">The 5 levels</a>
+          <a href="/#loop" class="nav-link">How it works</a>
+          <a href="/#case" class="nav-link">In practice</a>
+          <a href="/#proof" class="nav-link">Proof</a>
+          <a href="/writing/" class="nav-link">Writing</a>
+          <a href="/#contact" class="nav-link">Contact</a>
+        </div>
+        <label for="mnav" class="m-burger" role="button" tabindex="0" aria-label="Open menu">☰</label>
+        <button onclick="__tg()" aria-label="Toggle dark mode" class="theme-btn" style="width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; padding:0;"><span id="__ti">&#9790;</span></button>
+      </div>
+    </div>
+    <div class="m-menu">
+      <a href="/#ladder">The 5 levels</a>
+      <a href="/#loop">How it works</a>
+      <a href="/#case">In practice</a>
+      <a href="/#proof">Proof</a>
+      <a href="/writing/">Writing</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header style="border-bottom:1px solid var(--line);">
+    <div class="wrap" style="padding-top:clamp(60px,10vh,96px); padding-bottom:clamp(40px,7vh,64px);">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--accent-ink); font-weight:500;">Essay &middot; Finance, run on AI</div>
+      <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(34px,5vw,56px); line-height:1.12; letter-spacing:-0.02em; margin:22px 0 0; max-width:20ch; text-wrap:balance;">Correct Is Not the Bar</h1>
+      <p style="font-size:19px; color:var(--muted); margin:24px 0 0; max-width:62ch; line-height:1.6;">A review that only asks whether the work is right will pass work that changes nothing. Catching that is not a matter of more discipline.</p>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--faint); margin-top:26px;">Ashwin Kumar &middot; 7 September 2026</div>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top:clamp(44px,7vh,72px); padding-bottom:clamp(56px,9vh,96px);">
+    <article>
+      <p class="lede">Last week I finished an essay, had it reviewed, and threw it away. Nothing in it was wrong. That is the part worth writing about.</p>
+
+      <p>The piece was accurate. Every claim was sourced or labelled. It had been through a check for confidentiality, for numbers with no basis, for the tics that make writing sound machine-made. It cleared all of that. Then a red-team pass I run with a model, in a context that had never seen me write the thing, pointed out that most of the argument repeated what I had already published, in different words. The essay was correct and it was pointless. I threw it away and started again.</p>
+
+      <p>My review had tested one property. Whether the piece was worth reading was not among the things it looked at.</p>
+
+      <figure class="fig">
+        <svg viewBox="0 0 720 300" role="img" aria-label="Two horizontal thresholds. A lower line labelled accurate, which most review tests. A higher line labelled useful, which most review does not test. Work sitting between the two lines is marked as passing review while changing nothing.">
+          <text x="40" y="30" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600" style="fill:var(--ink)">What review tests, and what it lets through</text>
+          <rect x="150" y="96" width="470" height="104" rx="10" style="fill:var(--accent-wash);stroke:none"/>
+          <text x="385" y="140" text-anchor="middle" font-family="Newsreader, serif" font-size="18" font-style="italic" style="fill:var(--ink)">accurate, reviewed, and it changes nothing</text>
+          <line x1="60" y1="200" x2="690" y2="200" style="stroke:var(--accent-ink);stroke-width:2.5"/>
+          <text x="60" y="224" font-family="Instrument Sans, sans-serif" font-size="13.5" font-weight="600" style="fill:var(--accent-ink)">ACCURATE</text>
+          <text x="152" y="224" font-family="Instrument Sans, sans-serif" font-size="13" style="fill:var(--muted)">the floor, and the only thing most review measures</text>
+          <line x1="60" y1="96" x2="690" y2="96" style="stroke:var(--muted);stroke-width:2;stroke-dasharray:7 6"/>
+          <text x="60" y="82" font-family="Instrument Sans, sans-serif" font-size="13.5" font-weight="600" style="fill:var(--ink)">USEFUL</text>
+          <text x="132" y="82" font-family="Instrument Sans, sans-serif" font-size="13" style="fill:var(--muted)">the bar, and it is usually not tested at all</text>
+          <text x="60" y="266" font-family="IBM Plex Mono, monospace" font-size="11" style="fill:var(--faint)">below the solid line the work is wrong and gets caught</text>
+        </svg>
+        <figcaption>The gap between the two lines is where accurate, redundant analysis lives, and nothing in a correctness check looks there.</figcaption>
+      </figure>
+
+      <h2>The check almost every review runs</h2>
+
+      <p>Ask what your own review actually tests. In my experience it comes down to correctness. Do the numbers tie, is the logic sound, is anything overstated. That question is necessary, and it is the whole of most review processes I have seen, including my own until last week.</p>
+
+      <p>The remedy is not new, and I want to be clear about that before I claim anything. Every analyst is taught to ask what follows from the page. I have never seen it written down as a control, with a stated pass and fail, which is why it gets asked in conversation and never in review.</p>
+
+      <h2>This is not a writing problem</h2>
+
+      <p>A variance memo arrives. The numbers tie. The commentary is careful. The drivers named are the real drivers. It passes review, goes into the pack, and the reader learns nothing they did not already know from the same page last quarter. That memo is accurate, and it is waste. It consumed a preparer, a reviewer and a slot in front of a board, and it moved no decision.</p>
+
+      <p>I have approved pages like that. The memo above is a composite, and the pattern is the point. The review asked whether the numbers were right. Nobody asked whether the page said anything new.</p>
+
+      <p class="pull">Correctness is the floor. Almost every review I have run measures the floor and then stops.</p>
+
+      <h2>Two questions worth adding</h2>
+
+      <p>The first is the one my own review missed, and it is the one I would put in a policy.</p>
+
+      <div class="rk"><div class="k">Redundancy</div><div class="v">Has this already been said, by us, in the last few cycles? Not the numbers, which are always new. The argument, the framing, the conclusion.</div></div>
+      <div class="rk"><div class="k">Delta</div><div class="v">What changed since the last version of this same deliverable, beyond the figures? It fails if the only thing that changed is the numbers.</div></div>
+
+      <p>Both are cheap to ask. Only one of them is ever asked, and the reason is more interesting than a lack of rigour.</p>
+
+      <h2>Why redundancy survives review</h2>
+
+      <p>Three things protect it, and two of them are legitimate.</p>
+
+      <p>A reviewer needs standing to reject work that is correct. There is no procedural home for the sentence <em>this is accurate and it adds nothing</em>, and saying it out loud attacks a colleague's judgment rather than a number, which is a much harder thing to do in a review meeting.</p>
+
+      <p>Some repetition is also deliberate. A board reading the same page every quarter is reading a trend, and comparability is often the deliverable. A director who missed the last two calls needs the page that everybody else has already seen.</p>
+
+      <p>Neither of those is an argument for never asking. Both are arguments for asking against a record, so the answer is a fact. The record also separates the two: repetition that was decided in advance is declared in the record, and everything else is discovered in review.</p>
+
+      <p>Which brings me to the third thing, and the only one that is nobody's fault. Answering the question requires knowing what was already said, and that is memory rather than judgment. My own review missed the repetition in my essay even though everything I had published sat on one indexed page. The knowledge was addressable. Nothing in the review addressed it.</p>
+
+      <p>That is the same mechanism that lets a variance commentary repeat itself for four quarters running. Nobody compares this quarter's page against the last four. Each one is reviewed on its own, and on its own every one of them passes.</p>
+
+      <p>So the redundancy test needs a record to exist before anybody can ask it. Which makes this an operating-model problem rather than a discipline problem, and it is fixable with something dull: a file of what has already been argued, kept where the reviewer already looks.</p>
+
+      <p>I built that file the same week. It lists what each published piece already argued, and it now sits in front of every draft. It is the least sophisticated thing I have shipped this year.</p>
+
+      <h2>The second failure was the better one</h2>
+
+      <p>The replacement essay had its own problem.</p>
+
+      <p>I ran a check on it for a stylistic tic and reported that the tic had fallen from twenty-three instances to seven. It had not. I had counted four specific phrasings, and the tic had simply moved to other phrasings. The count was honest. The method was wrong.</p>
+
+      <p>The register I had built the week before would not have caught this. It records what I argued, not how I measured. One failure bought me one control, and the next failure was already outside it.</p>
+
+      <hr class="rule">
+
+      <p>I lost a week of work to a review that asked only whether I was right. At that price it was cheap. The expensive version is a finance function producing accurate, well-reviewed, entirely redundant analysis for years, with no single page ever failing an audit.</p>
+
+      <p style="font-size:19px;"><em>What does the reader of your last board page do differently because of it?</em> If you cannot answer that, the page passed review and failed its job. If you lead finance or operations and you are trying to make review test for more than correctness, that is the conversation I want to have.</p>
+      <p><a href="/#contact" class="cta">Get in touch</a></p>
+      <p style="font-size:15px; color:var(--muted); margin-top:26px;">Related: <a href="/writing/corrections-as-case-law.html" style="color:var(--accent-ink);">Corrections as case law</a>.</p>
+    </article>
+  </main>
+
+  <footer style="background:#101318; border-top:1px solid #1D232B;">
+    <div class="wrap" style="padding:30px clamp(20px,4vw,32px); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:12.5px; color:#6B7480;">
+      <span>&copy; 2026 Ashwin Kumar.</span>
+      <span>All views are my own and do not represent any organization I am or have been affiliated with. Content is for general information only and is not professional, financial, legal, or investment advice. No confidential or proprietary information is disclosed.</span>
+    </div>
+  </footer>
+</div>
+<script>
+  (function(){
+    try { var t = localStorage.getItem('ak-theme') || 'light'; document.documentElement.dataset.theme = t; document.getElementById('__ti').innerHTML = (t==='dark'?'☀':'☾'); } catch(e){}
+  })();
+  function __tg(){
+    var cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('ak-theme', next); } catch(e){}
+    document.getElementById('__ti').innerHTML = (next==='dark'?'☀':'☾');
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.m-menu a');
+    if (a) { var c = document.getElementById('mnav'); if (c) c.checked = false; }
+  });
+</script>
+</body></html>
