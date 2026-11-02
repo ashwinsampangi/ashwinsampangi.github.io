@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://ashwinsampangi.github.io/writing/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -109,6 +109,12 @@
   <url>
     <loc>https://ashwinsampangi.github.io/writing/instructions-expire.html</loc>
     <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ashwinsampangi.github.io/writing/agent-approval.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
